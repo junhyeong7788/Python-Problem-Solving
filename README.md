@@ -1,2 +1,2 @@
-# Algorithm-Problem-Solving
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub v2](https://github.com/arunbhardwaj/LeetHub-2.0)
+# Python-Problem-Solving
+파이썬 문제해결 능력을 기르기 위한 레포지토리
