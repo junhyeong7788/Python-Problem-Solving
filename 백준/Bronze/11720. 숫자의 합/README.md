@@ -26,11 +26,13 @@
 
  <p>입력으로 주어진 숫자 N개의 합을 출력한다.</p>
 
-### 접근법
+---
+
+### 💻접근법
 
 - 인사이트 : 예제 입력 2번 참고
 
-### 슈도코드
+### 📝슈도코드
 
 ```
 n값 받기
@@ -43,7 +45,7 @@ for numbers 탐색 :
 sum 출력
 ```
 
-### 다른 정답 코드
+### 👍다른 정답 코드
 
 ```python
 num = input()
@@ -52,7 +54,7 @@ numbers = list(map(int,input()))
 print(sum(numbers))
 ```
 
-### 레퍼런스
+### 🔗레퍼런스
 
 - [백준 11720번: 숫자의 합 파이썬](https://bambbang00.tistory.com/21)
 - [Do it! 알고리즘 코딩테스트 with Python - 배열과 리스트 실전문제](https://youtu.be/m2KpGo_-sGI)
