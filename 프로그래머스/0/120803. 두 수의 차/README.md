@@ -71,3 +71,32 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 풀이 추가
+```python
+# 첫번째 풀이
+def solution(num1, num2):
+        answer = num1 - num2
+        return answer
+```
+```python
+# 두번째 풀이 (제한사항 추가)
+def solution(num1, num2):
+    def validate_input(x, lower, upper):
+        if x >= lower and x <= upper:
+            return True
+        return False
+    num_list = [num1, num2]
+    assert all([validate_input(x, -50000, 50000) for x in num_list])
+    answer = num1 - num2
+    return answer
+```
+- 가정 설정문(assert) 사용
+- all 함수는 리스트의 모든 요수가 True일 경우에만 True를 반환  
+    - 만약 num1이나 num2 중 하나라도 범위를 벗어나면 False가 되어 AssertionError가 발생
+- 입력값이 지정된 범위 내에 있는지 확인하기 위한 안전장치 역할을 한다고 생각하면 된다.
+```python
+# 추가 풀이
+solution = lambda num1, num2 : num1 - num2
+```
+- [람다 표현식 TIL](https://github.com/junhyeong7788/TIL/blob/8678e0012d9a0abaf93d78b318540452772bf607/Python/lambda(%EB%9E%8C%EB%8B%A4).md)
