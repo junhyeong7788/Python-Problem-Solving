@@ -72,3 +72,20 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+
+---
+### 다른 풀이
+```python
+# 내가 푼 풀이
+def solution(age):
+    answer = 2022 - age + 1
+    return answer
+```
+```python
+# 가독성을 높인 풀이
+def solution(age):
+        this_year = 2022
+        answer = this_year - age + 1
+        return answer
+```
+- this_year 변수를 추가하는 것으로 코드의 가독성을 높일 수 있다.
