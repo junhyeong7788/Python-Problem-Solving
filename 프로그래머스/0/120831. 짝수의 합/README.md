@@ -65,3 +65,28 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+## REMIND
+- `num % 2 == 1` : 홀수
+- `num % 2 == 0` : 짝수
+- [list comprehension : TIL](https://github.com/junhyeong7788/TIL/blob/a61aa83eb1f6e039d5e5a84712162a8a8ece61fd/Python/List%20Comprehension.md)
+
+### 다른 풀이
+```python
+# 내가 푼 풀이 (
+def solution(n):
+    answer = 0
+    for i in range(n+1):
+        if i%2 == 0:
+            answer += i
+    return answer
+```
+```python
+def solution(n):
+	return sum([i for i in range(n+1) if i%2==0]) # 리스트 컴프리헨션
+```
+```python
+def solution(n):
+return sum([i for i in range(2, n + 1, 2)]) 
+# 2부터 n까지의 짝수를 생성, 그 짝수들을 i에 저장하여 [i for i in range(2, n+1, 2)]로 리스트를 생성
+```
