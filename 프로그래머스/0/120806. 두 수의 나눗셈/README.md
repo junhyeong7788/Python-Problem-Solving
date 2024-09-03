@@ -82,3 +82,25 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+
+---
+## 다른 풀이
+```python
+# 앞전에 배웠던 assert문을 사용하여 제한 사항을 추가하여 풀어봄
+def solution(num1, num2):
+    def validate_input(x, lower, upper):
+        if lower > x and x <= upper :
+            return Ture
+        return False
+    num_list = [num1, num2]
+    assert all([validate_input(x, 0, 100)] for x in num_list)
+    divide = num1 / num2 
+    answer = int(divide * 1000) 
+    return answer
+```
+
+```python
+# 간단한 풀이 / 제한 사항을 추가해주는 것이 맞을까?
+def solution(num1, num2):
+        return int(num1 / num2 * 1000)
+````
