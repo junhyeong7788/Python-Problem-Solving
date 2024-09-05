@@ -69,3 +69,36 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### REMIND
+- sum()/len()로 리스트 평균계산
+- statistics로 리스트 평균계산
+    ```python
+    import statistics
+    def solution(numbers):
+        answer = statistics.mean(numbers)
+        return answer
+
+    # 코드 축소
+    def solution(numbers):
+        return statistics.mean(numbers)
+    ```
+- numpy로 리스트 평균 계산
+    ```python
+    import numpy
+    def solution(numbers):
+        answer = numpy.mean(numbers)
+    return answer
+
+    # 코드 축소
+    def solution(numbers):
+        return numpy.mean(numbers)
+    ```
+
+### 다른 풀이
+```python
+def solution(numbers):
+    answer = sum(numbers)/len(numbers)
+    return answer
+```
+- statistics와 numpy 메서드로도 풀이가능
