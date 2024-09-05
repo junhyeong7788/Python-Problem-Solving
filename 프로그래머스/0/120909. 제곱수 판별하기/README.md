@@ -67,3 +67,31 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+
+---
+### REMIND
+- 제곱수 : `sqrt = n ** (1/2)` , `sqrt = n ** 0.5`
+        - $\sqrt{n} = n^{1/2}$
+- `is_integer()` : 부동 소수점(float) 객체에서 사용되는 메서드
+        - float 인스턴스가 정숫값을 가진 유한이면, True(1)를 , 그렇지 않으면 False(0)를 돌려준다.
+
+### 다른 풀이
+```python
+# 내가 푼 풀이
+def solution(n):
+    sqrt = n ** (1/2)
+    if sqrt % 1 == 0:
+        return 1
+    else :
+        return 2
+```
+```python
+# 코드 간결화
+def solution(n):
+    return 1 if (n ** 0.5) % 1 == 0 else 2
+```
+```python
+# is_integer 사용
+def solution(n):
+    return 1 if (n ** 0.5).is_integer() else 2
+```
