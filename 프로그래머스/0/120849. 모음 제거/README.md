@@ -68,3 +68,28 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### REMIND
+- List Comprehension
+- not in 연산자
+- [.join()](https://github.com/junhyeong7788/TIL/blob/15dfe1b4caa27a8f6c4d8610d1a78d367ecaa133/Python/join().md)
+
+### 다른 풀이
+```python
+def solution(my_string):
+    word = ("a", "e", "i", "o", "u")
+    return ''.join([i for i in my_string if i not in word])
+```
+- `i for i in my_sting`: my_string의 각 문자를 i로 하나씩 순회
+- `if i not in word`: 현재 순회 중인 문자 i가 word(모음 리스트)안에 포함 되어 있지 않은 경우에만 그 문자를 결과 리스트에 추가
+- `''.join()` : 리스트 안의 문자열 요소들을 하나의 문자열로 합쳐주는 매서드 (여기서는 빈 문자열 사용)
+  
+```python
+def solution(my_string):
+    words = ['a', 'e', 'i', 'o', 'u']
+    for i in words:
+        my_string = my_string.replace(i, '')
+    return my_string
+```
+- for 루프는 words 리스트에 있는 각 모음을 하나씩 변수 i에 저장하며 순차적으로 실행
+- `replace()` : 문자열 내에서 특정 문자를 다른 문자로 대체하는 함수 / 여기서는 i로 나타나는 각 모음을 빈 문자열 ('')로 대체하고, 그 결과를 my_string에 할당
