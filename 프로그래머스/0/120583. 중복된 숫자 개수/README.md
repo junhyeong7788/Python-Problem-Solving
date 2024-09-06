@@ -72,3 +72,26 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### REMIND
+- .count()
+
+### 다른 풀이
+1.
+```python
+def solution(array, n):
+    return sum(1 for x in array if x == n)
+```
+- `for x in array`: array에 각 요소를 순차적으로 x에 대입하면서 순회
+- `if x == n`:각 요소 x가 주어진 숫자 n과 같은지 확인
+- `1 `: x == n 조건이 참일 경우에만 1을 반환 / 즉, x가 n과 같을 때마다 1을 반환하여 그 값을 카운팅하는 역할
+
+2.
+```python
+def solution(array, n):
+    count = 0
+    for i in array:
+        if i==n :
+            count +=1
+    return count
+```
