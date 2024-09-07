@@ -68,3 +68,22 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### REMIND
+- `map()`, `lambda()` , `list comprehension`, `.append()`
+
+### 다른 풀이
+1.
+```python
+def solution(numbers):
+    return [ x*2 for x in numbers]
+```
+- 리스트의 각 요소를 x로 하나씩 가져와 2배로 곱한 값을 새로운 리스트로 만든다.
+
+2.
+```python
+def solution(numbers):
+    return list(map(lambda x: x*2, numbers))
+```
+- `map()` : 첫 번째 인자로 함수를 두 번째 인자로 리스트와 같은 반복 가능한 객체를 받음 (리스트의 각 요소에 대해 첫 번째 인자로 받은 함수를 적용)
+- `list(map())`: map함수의 결과를 list로 감싸서 리스트로 변환 (map함수가 반환하는 결과가 리스트가 아닌 iterable 객체 이기 때문에 리스트로 변환)
