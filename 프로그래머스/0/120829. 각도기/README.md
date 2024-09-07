@@ -85,3 +85,29 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+
+---
+### 다른 풀이
+1.
+```python
+def solution(angle):
+    if 0 < angle < 90:
+        return 1
+    elif angle == 90:
+        return 2
+    elif 90 < angle < 180:
+        return 3
+    elif angle == 180:
+        return 4
+```
+- 조건문 방식 : 각도 범위를 조건문으로 직접 정의하였기 때문에 angle의 값을 직관적으로 확인 가능
+- 장점 : 코드가 명확하고 직관적으로 각 구간이 어떻게 분류되는지 알 수 있다.
+2.
+```python
+def solution(angle):
+    answer = (angle // 90) * 2 + (angle % 90 > 0) * 1
+    return answer
+```
+- 단순화된 연산 : 나머지 연산(%)과 몫 연산(//)을 사용해 90도 단위로 각을 나누고, 나머지가 있는 경우 추가 값을 더하는 방식
+-  코드가 간결하고 수학적 연산을 활용해 각도를 구분함
+- ex : `angle = 100일 경우` : `( 100 // 90 ) * 2 + ( 100 % 90 > 0 ) * 1 = 2 + 1 = 3`
