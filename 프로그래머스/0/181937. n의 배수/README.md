@@ -71,3 +71,49 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `lambda함수`, `num이 n의 배수 : num % n == 0`
+
+### 💻 접근법
+인사이트 : 정수 num이 n의 배수인지 확인하려면 num을 n으로 나눴을 때 나머지는 0 이여야한다.
+
+### 📝 슈도코드
+```
+def solution함수 (num, n):
+    answer변수를 0으로 생성
+    if num을 n으로 나눴을 때 나머지가 0과 같다
+        answer는 1
+    그 외:
+        answer는 0
+    return answer변수
+```
+
+```python
+# 풀이 코드
+def solution(num, n):
+    answer = 0
+    if num % n == 0 :
+        answer = 1
+    else :
+        answer = 0
+    return answer
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(num, n):
+    return int(num % n == 0)
+```
+```python
+def solution(num, n):
+    return 1 if num % n == 0 else 0
+```
+- 가독성과 간결함을 가진 코드
+
+2.
+```python
+solution = lambda num, n : 1 if num % n == 0 else 0
+```
+- lambda함수 사용
