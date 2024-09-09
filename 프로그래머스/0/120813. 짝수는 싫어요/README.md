@@ -67,3 +67,45 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- for loop, if문, list comprehension
+
+### 💻 접근법
+인사이트 : 프로그래머스 18137. n의 배수
+- 해당 문제는 정수 num과 n이 매개변수로 주어질 때, num이 n의 배수이면 1을 return n의 배수가 아니라면 0을 return하는 함수를 작성하는 것이다.
+- 이 문제와 다르게 홀수만 찾아서 배열에 추가하면 되는 것이다.
+
+### 📝 슈도코드
+```
+def solution함수이름 (n):
+    answer배열 변수 = []
+    for i in range( 변수 n + 1 ):
+        if i를 2로 나눴을때 나머지가 1일때:
+            answer배열에 i를 추가
+    return answer배열 변수
+```
+
+```python
+# 풀이 코드
+def solution(n):
+    answer = []
+    for i in range(n+1):
+        if i % 2 == 1:
+            answer.append(i)
+    return answer
+```
+- for루프와 조건문을 사용하여 의도를 명확하게 표현하여 이해하기 쉬운 코드 스타일
+
+### 👍 다른 정답 코드
+```python
+def solution(n):
+    return [x for x in range(n + 1) if x % 2]
+### 슈도 코드
+함수 정의 solution(n):
+    return [ 3. x를 리스트로 추가 , 1. 0부터 n까지 각 숫자 x에 대해, 2. if x를 2로 나눈 나머지가 1이면]
+###
+```
+- 리스트 컴프리헨션을 사용하여 짧고 간결하게 작성되었다.
+- range(n+1)을 반복하면서 각 요소 x에 대해 if x % 2조건을 검사함
+- 이 조건은 x가 홀수일 때 True(1)가 반환
