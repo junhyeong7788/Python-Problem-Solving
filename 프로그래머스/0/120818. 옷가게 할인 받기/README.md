@@ -73,3 +73,47 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- dictionary, for loop
+
+### 💻 접근법
+인사이트 : 조건문을 사용하여 해당 가격 지정 후 리턴값을 준다.
+
+### 📝 슈도코드
+```
+def solution함수 (가격):
+    if 가격이 50만원 이상이면
+        return 정수(가격 - (할인률 20%))
+    elif 가격이 30만원이상이고 50만원 미만이면:
+        return 정수(가격 - (할인률 10%))
+    elif 가격이 10만원이상이고 30만원 미만이면:
+        return 정수(가격 -(할인률 5%))
+    else :
+        return 정수(가격)
+```
+
+```python
+# 풀이 코드
+def solution(price):
+    if price >= 500000:
+        return int(price - (price*0.2))
+    elif price >= 300000 and price < 500000:
+        return int(price - (price*0.1))
+    elif price >= 100000 and price < 300000:
+        return int(price - (price*0.05))
+    else : 
+        return int(price)
+```
+
+### 👍 다른 정답 코드
+```python
+def solution(price):
+    discount_rates = {500000: 0.8, 300000: 0.9, 100000: 0.95, 0: 1}
+    for discount_price, discount_rate in discount_rates.items():
+        if price >= discount_price:
+            return int(price * discount_rate)
+```
+- dictionary로 정의 / 특정 가격 기준을 key로 저정, 각 가격에 적용할 할인율을 value로 저장
+- for 반복문을 사용하여 discount_rates사전의 각 항목을 순회 / 할인 적용 기준 가격과 적용 할인율을 추출
+- 할인된 가격을 구하고, 이를 정수로 변환하여 반환 / 사전은 내림차순 정렬이므로, 더 높은 할인율이 적용할 경우 먼저 검사하고 조건에 맞으면 바로 반환
