@@ -67,3 +67,48 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+
+---
+### 🤔 REMIND
+- 배열에 추가해야해서 꼭 append함수를 써야한다고만 생각하였다.
+- 배열에 추가해주려고 하지 않아도 된다.
+
+### 💻 접근법
+인사이트 
+- 커피 개수 구하는 방법 : 가지고 있는 돈 // 커피가격
+- 잔돈 구하는 방법 : 가지고 있는 돈 % 커피 가격
+
+### 📝 슈도코드
+```
+def solution함수(돈):
+    정답 변수 [ 가지고 있는 돈 // 커피가격, 가지고 있는 돈 % 커피 가격]
+    return 정답
+```
+
+```python
+# 풀이 코드
+def solution(money):
+    answer = []
+    answer.append(money // 5500)
+    answer.append(money % 5500)
+    return answer
+```
+
+### 👍 다른 정답 코드
+```python
+def solution(money):
+    answer = [money // 5500, money % 5500]
+    return answer
+```
+```python
+def solution(money):
+    return [money // 5500, money % 5500]
+```
+```python
+def solution(money):
+    return divmod(money, 5500)
+```
+- `divmod(a, b)`: 두 개의 숫자를 입력받아 그 숫자들의 몫과 나머지를 한 번에 계산해 반환하는 함수
+    - a : 나누어 지는 숫자(피제수)
+    - b : 나누는 숫자(제수
+    - `(몫, 나머지)`를 튜플 형태로 반환/ 즉, `(a // b, a % b)` 와 동일한 결과를 제공한다.
