@@ -95,15 +95,18 @@ def solution(money):
 ```
 
 ### 👍 다른 정답 코드
+1.
 ```python
 def solution(money):
     answer = [money // 5500, money % 5500]
     return answer
 ```
+2.
 ```python
 def solution(money):
     return [money // 5500, money % 5500]
 ```
+3.
 ```python
 def solution(money):
     return divmod(money, 5500)
