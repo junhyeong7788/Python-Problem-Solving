@@ -77,3 +77,40 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- math모듈 : `math.ceil()`
+
+### 💻 접근법
+인사이트 : 7의 배수
+- 몫을 출력해야한다고 생각
+
+### 📝 슈도코드
+```
+함수 solution 정의 (매개변수 n):
+    if n을 7로 나눈 나머지가 0과 일치한다면:
+        n // 7의 값을 반환
+    else:
+        n // 7 + 1 값을 반환
+```
+
+```python
+# 풀이 코드
+def solution(n):
+    if n % 7 == 0:
+        return n // 7
+    else  :
+        return n // 7 + 1
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+import math
+
+def solution(n):
+    return math.ceil(n/7)
+```
+- math 모듈 : 수학적 계산을 위한 다양한 함수와 상수를 제공
+- `math.ceil()` : ()안의 있는 결과를 올림처리 한다.
+    - `math.ceil( n / 7)` 일때 n이 15이면 15 / 7은 약 2.14가 되고, 올림 처리하여 값은 3이된다.
