@@ -72,3 +72,46 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- list comprehension, for loop, if문, list
+- `len()`, `sum()`
+
+### 💻 접근법
+인사이트 : 배열을 반복해서 읽고 배열의 숫자가 키보다 크면 정답변수에 1씩 더하기
+
+### 📝 슈도코드
+```
+def solution함수 (배열, 키):
+    정답 변수 = 0
+    for i in 배열:
+        if 키 < i :
+            정답변수 = 정답변수 + 1
+    정답변수 반환
+```
+```python
+# 풀이 코드
+def solution(array, height):
+    answer = 0
+    for i in array:
+        if height < i:
+            answer += 1
+    return answer
+```
+
+### 👍 다른 정답 코드
+1. 
+```python
+def solution(array, height):
+    return len([i for i in array if i > height])
+```
+- array의 각 요소 i가 height보다 큰지 확인하고, 그 조건을 만족하는 요소들을 새로운 리스트로 만든다.
+- `len()` : 함수를 이용하여 새롭게 만든 리스트의 개수를 반환
+2.
+```python
+def solution(array, height):
+    return sum(1 for a in array if a > height)
+```
+- if문의 조건을 만족하는 경우에만 1을 반환
+- `sum()` : height보다 큰 값이 있을 때마다 반환되는 1을 순차적으로 더해준다.
+
