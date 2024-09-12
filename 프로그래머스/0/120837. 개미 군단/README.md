@@ -78,3 +78,37 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+
+### 💻 접근법
+인사이트 : 체력 hp를 5, 3, 1의 공격력 순서로 나누어 최소한의 병력을 구성하는 방법
+
+### 📝 슈도코드
+```
+def solution함수(hp):
+    장군개미 = 체력 // 5
+    병정개미 = (체력 - (5 * 장군개미)) // 3
+    일 개미 = (체력 - (5 * 장군개미) - (3 * 병정개미) // 1
+    return 장군개미 + 병정개미 + 일개미
+```
+```python
+# 풀이 코드
+def solution(hp):
+    general = hp // 5
+    soldier = (hp - (5 * general)) // 3
+    worker = (hp - (5 * general) - (3 * soldier)) // 1
+    return general + soldier + worker
+```
+- 논리를 조금 더 명시적으로 풀이
+- `soldier = (hp - (5 * general)) // 3` : 장군개미가 처리하고 남은 체력에서 병정 개미가 얼마나 필요한지 계산
+- `worker = (hp - (5 * general) - (3 * soldier)) // 1` : 병정 개미가 처리하고 남은 체력에서 일개미가 얼마나 필요한지 계산
+### 👍 다른 정답 코드
+```python
+def solution(hp):    
+    return hp // 5 + (hp % 5 // 3) + ((hp % 5) % 3)
+```
+- 장군개미의 수/ 장군개미를 구한 수의 나머지로 병정개미 구하기/ 병정개미를 구한 수의 나머지로 일꾼개미 구하기
+- `hp % 5` : 장군 개미로 처리하고 남은 체력
+- `(hp % 5 // 3)`: 병정 개미가 얼마나 필요한지 계산, 남은 체력을 3으로 나눈 몫이 필요한 병정 개미의 수
+- `(hp % 5) % 3`
