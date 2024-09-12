@@ -74,3 +74,41 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+
+### 💻 접근법
+인사이트 : 공배수
+
+### 📝 슈도코드
+```
+def solution함수(정수number, n의 배수, m의 배수):
+    정답 변수 = 0
+    if ( 정수 number을 n으로 나눴을 때 값이 0과 동일하고 정수 number을 m으로 나눴을 때 값이 0과 동일하다면):
+        answer 변수의 값은 1
+    else:
+        answer 변수의 값은 0
+    answer 값을 반환
+```
+```python
+# 풀이 코드
+def solution(number, n, m):
+    answer = 0
+    if (number % n == 0 and number % m == 0):
+        answer = 1
+    else:
+        answer = 0
+    return answer
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(number, n, m):
+    return int(number%n == 0 and number%m == 0)
+```
+2.
+```python
+def solution(number, n, m):
+    return 1 if number%n==0 and number%m==0 else 0
+```
