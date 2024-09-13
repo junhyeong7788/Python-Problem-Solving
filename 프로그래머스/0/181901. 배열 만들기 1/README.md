@@ -77,6 +77,7 @@
 
 ### 💻 접근법
 인사이트 : n개를 k로 나눴을 때 나머지가 0인 것을 리스트에 추가
+- [[level 0] n의 배수 - 181937](https://github.com/junhyeong7788/Python-Problem-Solving/tree/8182ed529cfacbf3700c39a5c34961cd3a609a56/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/0/181937.%E2%80%85n%EC%9D%98%E2%80%85%EB%B0%B0%EC%88%98) : 해당 문제에서 정수 num이 n의 배수인지 확인하는 부분에서 인사이트를 얻었다.
 
 ### 📝 슈도코드
 ```
