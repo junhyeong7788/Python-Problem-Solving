@@ -71,3 +71,41 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- list comprehension, append()
+
+### 💻 접근법
+인사이트 : n개를 k로 나눴을 때 나머지가 0인 것을 리스트에 추가
+
+### 📝 슈도코드
+```
+def solution함수(정수 n, 배수 지정 k):
+    정답 리스트
+    for i in range(1부터 n+1까지):
+        if i를 k로 나눴을 때 나머지가 0과 동일하다면:
+            answer(정답)리스트에 i를 추가
+    return 정답 리스트
+```
+```python
+# 풀이 코드 1
+def solution(n, k):
+    answer = []
+    for i in range(1, n+1):
+        if i % k == 0:
+            answer.append(i)
+    return answer
+```
+```python
+# 풀이 코드 2 
+def solution(n, k):
+    return [i for i in range(1, n+1) if i % k == 0]
+```
+- 리스트 컴프리헨션 사용
+### 👍 다른 정답 코드
+```python
+def solution(n, k):
+    return [i for i in range(k, n+1, k)]
+```
+- K부터 시작한 코드, 굳이 1부터 시작 안해도 된다.
+    
