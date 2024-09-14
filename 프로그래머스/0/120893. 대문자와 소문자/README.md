@@ -68,3 +68,36 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `swapcase()` : 문자열에 있는 모든 문자를 대문자는 소문자로, 소문자는 대문자로 변환
+
+### 💻 접근법
+인사이트 : `swapcase()` 를 사용하여 쉽고 간단하게 풀이하였다.
+
+### 📝 슈도코드
+```
+def solution함수 (my_string 변수):
+    return my_string의 문자열을 대문자는 소문자로, 소문자는 대문자로 변환
+```
+
+```python
+# 풀이 코드
+def solution(my_string):
+    return my_string.swapcase()
+```
+
+### 👍 다른 정답 코드
+```python
+def solution(my_string):
+    answer = ''
+
+    for i in my_string:
+        if i.islower():
+            answer += i.upper()
+        elif i.isupper():
+            answer += i.lower()
+
+    return answer
+```
+- for loop와 if문을 사용하여 풀이한 방법 / `upper()` : 문자열을 대문자로 변환, `lower() : 문자열을 소문자로 변환` 사용
