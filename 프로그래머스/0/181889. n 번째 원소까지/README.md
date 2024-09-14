@@ -71,3 +71,40 @@ ___</li>
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- 리스트 슬라이싱, enumerate()
+
+### 💻 접근법
+인사이트 : 처음에는 다른 정답 코드 1번 처럼 for loop를 사용하여 풀이하려고 하였다.
+- 간단하게 리스트 슬라이싱으로 풀 수 있는 문제였다.
+
+### 📝 슈도코드
+```
+def solution함수 (정수 리스트 num_list, n번째 원소):
+    return num_list[첫번째부터 n번째 인덱스까지 리스트 인덱싱]
+```
+```python
+# 풀이 코드
+def solution(num_list, n):
+    return num_list[0:n] # [:n] 도 가능
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(num_list, n):
+    answer = []
+    for i in range(n):
+        answer.append(num_list[i])
+    return answer
+```
+- `for i in range(n)` : 0부터 n-1까지의 정수를 반환하는 이터레이터
+- `answer.append(num_list[i])` : i는 인덱스, num_list의 첫 번째 요소부터 n번째 요소까지 하나씩 answer에 추가됨
+2.
+```python
+def solution(num_list, n):
+    return [v for i,v in enumerate(num_list) if i<n]
+```
+- `enumerate(num_list)` : num_list의 요소들을 인덱스와 함께 반복할 수 있도록 해주는 함수
+-  enumerate는 (인덱스, 요소) 형태의 튜플로 반환하여, 여기서 i는 인덱스, v는 num_list의 해당 인덱스에 있는 요소이다.
