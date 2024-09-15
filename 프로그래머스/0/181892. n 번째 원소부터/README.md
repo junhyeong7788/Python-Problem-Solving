@@ -72,3 +72,28 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- list slicing, lambda
+
+### 💻 접근법
+인사이트 : 리스트 슬라이싱을 이용하여 간단하게 풀이할 수 있을 것이다.
+
+### 📝 슈도코드
+```
+def solution(num_list, n):
+    num_list의 n-1번째 인덱싱부터 마지막 원소까지 담은 리스트 반환
+```
+```python
+# 풀이 코드
+def solution(num_list, n):
+    return num_list[n-1:]
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+solution=lambda x,y:x[y-1:]
+```
+- lambda함수 : 한 줄로 간결하게 작성할 수 있는 익명 함수
+- x라는 인자를 받아, y-1번째 인덱스부터 마지막까지의 요소를 반환 , 여기서 `x`는 인덱싱이 가능한 객체를 의미, `y`는 인덱스를 나타냄
