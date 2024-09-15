@@ -67,3 +67,42 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- for loop에는 문자열, 리스트, 튜플과 같은 반복 가능한 객체에서만 사용할 수 있다.
+- `sum()`
+
+### 💻 접근법
+인사이트 : for loop를 사용하여 문자열 n의 자릿수를 읽어 answer 변수에 더하려고 하였다.
+
+### 🚫 문제해결 중 발생한 에러
+1. `for i in n` : `TypeError: 'int' object is not iterable` 파이썬에서 반복 가능한 객체가 아닌 것을 반복하려고 할 때 발생하는 에러
+2. `answer += i` : `TypeError: unsupported operand type(s) for +=: 'int' and 'str'` 숫자 (int)와 문자열 (str)을 더하려고 시도할 때 발생하는 에러
+
+### 📝 슈도코드
+```
+def solution함수(매개변수 n):
+    변수 answer를 0으로 초기화
+    n을 문자열로 변환하여 str_n에 저장
+    for str_n의 각 문자 i에 대해 반복:
+        i를 정수로 변환한 값을 answer에 더한다.
+    return answer를 반환
+```
+```python
+# 풀이 코드
+def solution(n):
+    answer = 0
+    str_n = str(n)
+    for i in str_n:
+        answer += int(i)
+    return answer
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(n):
+    return sum(int(i) for i in str(n))
+```
+- 내장함수 sum() 사용
+- `int(i) for i in str(n)` : 리스트 컴프리헨션 방식, str(n)에서 각 문자를 정수로 변환한 리스트를 만듬
