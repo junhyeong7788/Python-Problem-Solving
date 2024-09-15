@@ -69,3 +69,33 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `max()` , `.index()`
+
+### 💻 접근법
+인사이트 : 
+- 배열에서 가장 큰 수를 찾는 내장함수가 있다. -> 찾아보다가 배열에서 index를 찾는 함수도 찾음
+
+### 📝 슈도코드
+```
+def solution(매개변수로 array을 받는다):
+    변수 answer를 0으로 초기화
+    answer변수에 array에서 가장 큰 수를 추가
+    answer변수에 array에서 가장 큰 수의 인덱스를 추가
+    answer을 반환
+```
+```python
+# 풀이 코드 1
+def solution(array):
+    answer = []
+    answer.append(max(array))
+    answer.append(array.index(max(array)))
+    return answer
+```
+```python
+# 풀이 코드 2
+def solution(array):
+    return [max(array), array.index(max(array))]
+```
+- 배열이 길어지면 비효율적일 수 있다.
