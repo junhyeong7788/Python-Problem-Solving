@@ -51,3 +51,36 @@
       </table>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `.join()` : 리스트 내에 문자들만 있는 경우나 숫자가 섞여있는 경우에 해당 리스트를 문자열로 변환할 수 있는 방법
+
+### 💻 접근법
+인사이트 : `.join` 함수 사용, 처음에는 for loop으로 풀이하려고 하였다.
+
+### 📝 슈도코드
+```
+def solution(매개변수로 arr를 받는다):
+    빈 문자열에 리스트 arr의 모든 요소를 이어 붙인다. (하나의 문자열로 결합)
+    return answer을 반환
+```
+```python
+# 풀이 코드
+def solution(arr):
+    answer = ''.join(arr)
+    return answer
+```
+```python
+def solution(arr):
+    return ''.join(arr)
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(arr):
+    answer = ''
+    for i in arr:
+        answer = answer + i  # answer += i
+    return answer
+```
