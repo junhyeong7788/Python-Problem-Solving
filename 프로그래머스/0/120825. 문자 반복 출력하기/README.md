@@ -61,3 +61,34 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `.join()` : 여러 문자열을 빈 문자열('')을 기준으로 합쳐서 하나의 문자열로 만들어준다.
+
+### 💻 접근법
+인사이트 : 문자열 반복 파이썬이라는 키워드로 구글검색하여 .join매서드를 이용하여 풀이하게 되었다.
+
+### 📝 슈도코드
+```
+def solution(매개변수로 my_string리스트와 n을 받는다):
+    return 빈문자열을 기준으로 합쳐서 하나의 문자열로 만듬 [i를 n번 반복 , 각 문자를 하나씩 i에 할당하며 순회]
+```
+```python
+# 풀이 코드
+def solution(my_string, n):
+    return ''.join([i * n for i in my_string])
+```
+```python
+# 제너레이터 표현식으로 사용
+def solution(my_string, n):
+    return ''.join(i*n for i in my_string)
+```
+### 👍 다른 정답 코드
+1.
+```python
+def solution(my_string, n):
+    answer = ''
+    for m in my_string:
+        answer += (m * n)
+    return answer
+```
