@@ -72,3 +72,50 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- if문 한줄 코딩 (삼항연산자) : `if {조건}: 결과` `변수 = A if {조건} else B` `변수 = A if {조건1} else B if {조건2} else C`
+
+### 💻 접근법
+인사이트 : if문을 사용하여 풀이하려고 하였다.
+
+### 📝 슈도코드
+```
+def solution(매개변수 n과 k를 받는다):
+    양꼬치 가격의 변수 선언
+    음료수 가격의 변수 선언
+    지불금액 변수 = 양꼬치 가격 * n + 음료수 가격 * n
+    할인금액 변수 = (n//10) * 음료수 가격
+
+    return n이 10이상이면 payment-discount이고 그 외는 payment값을 반환
+```
+```python
+# 풀이 코드 1
+def solution(n, k):
+    lambSkewers = 12000
+    drink = 2000
+    count = n//10
+    if n >= 10:
+        return ((lambSkewers * n) + (drink * k)) - (2000 * count)
+    else:
+        return ((lambSkewers * n) + (drink * k))
+```
+```python
+# 풀이 코드 2
+def solution(n, k):
+    lambSkewers = 12000
+    drink = 2000
+    payment = (lambSkewers * n) + (drink * k)
+    discount = (n//10) * drink
+    
+    return payment-discount if n >= 10 else payment
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(n, k):
+    return 12000 * n + 2000 * (k - n // 10)
+```
+- 내가 풀이한 코드는 변수를 정의하고 계산을 단계별로 나누어 수행하므로, 전체적인 로직이 명확하게 드러난다. (유지보수나 디버깅에 용이)
+- 다른 정답 코드는 코드의 의도를 한눈에 파악하기 어렵다. 매우 간결하다. 메모리 사용 측면에서 조금 더 효율적이다. (최적화가 잘되어있고 수행속도가 빠름) 
