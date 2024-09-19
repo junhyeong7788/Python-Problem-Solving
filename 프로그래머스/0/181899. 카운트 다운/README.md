@@ -59,3 +59,29 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- python range() 함수 : `list(range(시작, 끝, 간격)`
+- 간격에 실수(float)를 사용하려고 하면 numpy패키지의 arange()함수를 사용해야한다.
+
+### 💻 접근법
+인사이트 : range()함수를 사용해서 풀이
+
+### 📝 슈도코드
+```
+def solution(매개변수로 start_num과 end_num을 받는다.
+    return 첫번째 숫자부터 마지막 숫자 -1 까지 -1간격으로 리스트 생성한다.
+```
+```python
+# 풀이 코드
+def solution(start_num, end_num):
+    return list(range(start_num, end_num-1, -1))
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(start, end):
+    return [i for i in range(start,end-1,-1)]
+```
+- 리스트 컴프리헨션으로 리스트 생성
