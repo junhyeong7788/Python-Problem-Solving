@@ -72,3 +72,31 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- string slicing
+
+### 💻 접근법
+인사이트 : 처음에는 for문으로 풀이하려고 하였으나 풀이중에 문자열 슬라이싱이 생각나서 아주 간단하게 풀이하였다.
+
+### 📝 슈도코드
+```
+def solution(매개 변수로 문자열 my_string과 n을 받는다):
+    return my_sting문자열의 처음부터 n까지의 문자열 슬라이싱
+```
+```python
+# 풀이 코드
+def solution(my_string, n):
+    return my_string[:n]
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(my_string, n):
+    answer = ''
+    for i in range(n) :
+        answer += my_string[i]
+    return answer
+```
+- `answer += my_string[i]`: my_string에서 i번째 문자를 answer에 추가한다. 
