@@ -73,3 +73,37 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- list indexing
+- list comprehension
+- `''.join()`
+
+### 💻 접근법
+인사이트 : for loop, list indexing으로 해결가능
+
+### 📝 슈도코드
+```
+def solution(문자열my_string과 정수 배열index_list를 매개변수로 받는다.):
+    answer 문자열 변수 선언 = ''
+    for i in 정수배열 index_list를 순회한다:
+        answer변수 = answer변수 + my_string[i]를 순차적으로 더한다.
+    return 문자열이 저장된 answer변수 반환
+```
+```python
+# 풀이 코드
+def solution(my_string, index_list):
+    answer = ''
+    for i in index_list:
+        answer += my_string[i]
+    return answer
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(my_string, index_list):
+    return ''.join([my_string[i] for i in index_list])
+```
+- index_list의 각 요소 i를 순회하면서, my_string[i]를 통해 my_string의 해당 인덱스에 있는 문자 선택
+- `''.join()` : 리스트 컴프리헨션을 통해 생성된 문자 리스트를 하나의 문자열로 결합한다.
