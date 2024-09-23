@@ -70,3 +70,32 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `len()`
+
+### 💻 접근법
+인사이트 : for loop로 풀이하려고 하였는데 len()함수가 떠올랐다.
+
+### 📝 슈도코드
+```
+def solution(매개변수로 문자열 message의 매개변수를 받는다):
+    return message의 문자열 길이에 * 2를 반환한다.
+```
+```python
+# 풀이 코드
+def solution(message):
+    return len(message) * 2
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(message):
+    answer = 0
+    for x in message:
+        answer = answer + 2
+    return answer
+```
+- 문자열의 각 문자가 차지하는 폭이 2cm이며, 문자열을 글자 수에 비례하여 폭을 계산하는 간단한 규칙이 적용
+- 모든 문자를 처리한 후 answer에 저장된 값을 반환, 이 값은 문자열의 전체 길이(폭)을 cm단위로 나타냄
