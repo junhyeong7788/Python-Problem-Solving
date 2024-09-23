@@ -75,3 +75,67 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- for loop
+  
+
+### 💻 접근법
+인사이트 : for loop
+
+### 📝 슈도코드
+```
+def solution(매개변수로 정수n과 문자열 control을 받는다):
+    for 문자열 control을 순회한다:
+        만약 x가 "w"와 일치한다면:
+            n = n + 1
+        만약 x가 "a"와 일치한다면:
+            n = n - 10
+        만약 x가 "s"와 일치한다면:
+            n = n - 1
+        만약 x가 "d"와 일치한다면:
+            n = n + 10
+    return n을 반환
+```
+```python
+# 풀이 코드
+def solution(n, control):
+    for x in control:
+        if x == "w":
+            n += 1
+        elif x == "a":
+            n -= 10
+        elif x == "s":
+            n -= 1
+        else:
+            n += 10
+    return n
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(n, control):
+    key = dict(zip(['w','s','d','a'], [1,-1,10,-10]))
+    return n + sum([key[c] for c in control])
+```
+- `key = dict(zip(['w','s','d','a'], [1,-1,10,-10]))` : 주어진 문자 각각을 숫자 1, -1, 10, -10과 연결하는 딕셔너리를 생성한다.
+- `zip()`: 두 리스트의 각 요소를 튜플로 묶어준다. 이 튜플들을 dict()함수에 전달하여 키-값 상을 가진 딕셔너리를 만든다.
+- `sum([key[c] for c in control])` : control 문자열의 각 문자c에 대해 딕셔너리 key에서 해당 문자에 대응하는 값을 가져온다. 이 값들은 주어진 컨트롤 문자에 따라 n을 더하거나 뺄 값들이다.
+2.
+```python
+def solution(n, control):
+    answer = n
+    c = { 'w':1, 's':-1, 'd':10, 'a':-10}
+    for i in control:
+        answer += c[i]
+    return answer
+```
+- dictionary로 각 문자에 따른 값 매핑
+- for loop를 사용하여 control문자열을 순회, 각 만복에서 i는 control문자열의 각 문자를 나타냄, c[i]는 현재 문자 i에 해당하는 값을 딕셔너리 c에서 찾아내어 answer에 더한다.
+3.
+```python
+def solution(n, control):
+    return n + 10*(control.count('d')-control.count('a')) + (control.count('w')-control.count('s'))
+```
+- 각 문자열에 대해 발생횟수를 계산하여, 상쇄될 수 있는 값의 발생횟수를 빼준다.
