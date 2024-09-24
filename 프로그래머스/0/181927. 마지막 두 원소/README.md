@@ -1,6 +1,6 @@
 # [level 0] 마지막 두 원소 - 181927 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181927) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181927?language=python3) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 25일 00:57:53
+2024년 09월 25일 00:59:25
 
 ### 문제 설명
 
