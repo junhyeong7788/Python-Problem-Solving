@@ -68,3 +68,44 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- 삼항연산자, `append()`, list slicing
+
+### 💻 접근법
+인사이트 : list slicing과 list.append()를 사용하여 풀이
+
+
+### 📝 슈도코드
+```
+def solution(정수 num_list를 매개변수로 받는다):
+    answer리스트를 변수로 선언
+    if num_list 마지막 요소가 그 전 원소보다 크면:
+        answer 변수 = num_list 마지막 요소 - num_list 마지막 전 요소
+        num_list의 마지막요소로 answer결과를 추가
+        return num_list를 반환
+    else:
+        answer 변수 = num_list 마지막 요소 * 2
+        num_list의 마지막요소로 answer결과를 추가
+        return num_list를 반환
+```
+```python
+# 풀이 코드 1
+def solution(num_list):
+    answer = []
+    if num_list[-1] > num_list[-2]:
+        answer = num_list[-1] - num_list[-2]
+        num_list.append(answer)
+        return num_list
+    else:
+        answer = num_list[-1] * 2
+        num_list.append(answer)
+        return num_list
+```
+```python
+# 풀이 코드 2
+def solution(num_list):
+    num_list.append(num_list[-1] - num_list[-2] if num_list[-1] > num_list[-2] else num_list[-1] * 2)
+    return num_list
+```
+- 삼항연산자를 사용하여 if-else문을 간소화하였다.
