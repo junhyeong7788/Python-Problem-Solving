@@ -59,3 +59,33 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `range(start, end, step)`
+- `lambda함수`
+
+### 💻 접근법
+인사이트 : range()를 사용하여 리스트를 생성
+
+### 📝 슈도코드
+```
+def solution(정수 start_num와 end_num을 매개변수로 받는다):
+    return start_num부터 end_num까지 list를 선언한 리스트를 반환
+```
+```python
+# 풀이 코드 1
+def solution(start_num, end_num):
+    return list(range(start_num, end_num+1))
+```
+```python
+# 풀이 코드 2
+solution = lambda start, end : [i for i in range(start, end+1)]
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(start, end):
+    return [i for i in range(start,end+1)]
+```
+- list comprehension으로 리스트 생성하여 풀이하는 방법
