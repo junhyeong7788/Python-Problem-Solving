@@ -1,2 +1,1 @@
-def solution(start_num, end_num):
-    return list(range(start_num, end_num+1))
+solution = lambda start, end : [i for i in range(start, end+1)]
