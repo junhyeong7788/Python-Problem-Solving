@@ -83,3 +83,28 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `max()`, `str()`, `int()`, f-string
+
+### 💻 접근법
+인사이트 : [[level 0] 더 크게 합치기 - 181939](https://github.com/junhyeong7788/Python-Problem-Solving/blob/081532f00f48b176a5b24efa86399d2e2ff731bc/프로그래머스/0/181939. 더 크게 합치기/README.md) : 해당 문제에서 알게된 max()함수와 f-string의 결합으로 문제 풀이
+
+### 📝 슈도코드
+```
+def solution (두 정수 a와 b를 매개변수로 받는다):
+    return a와 b의 문자열 결합한 결과를 int형으로 변환한 값과 2*a*b 와 비교하여 더 큰 값을 반환
+```
+```python
+# 풀이 코드
+def solution(a, b):
+    return max(int(f"{a}{b}"), 2*a*b)
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(a, b):
+    return max(int(str(a)+str(b)), 2*a*b)
+```
+- `str()`으로 변환 풀이
