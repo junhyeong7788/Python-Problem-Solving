@@ -79,3 +79,44 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- 짝수, 홀수, 리스트 컴프리헨션 내 if-else문 사용
+
+### 💻 접근법
+인사이트 : 리스트 컴프리헨션을 사용하여 for loop, if-else문으로 풀이
+
+### 📝 슈도코드
+```
+def solution( 정수 배열 arr와 자연수 k를 매개변수로 받는다):
+    return arr의 요소를 순회 / k가 짝수일 때 k + val을 리스트로 반환, k가 홀수일 때 k * val을 리스트로 반환
+```
+```python
+# 풀이 코드 1
+def solution(arr, k):
+    return [k + val if k % 2 == 0 else k * val for val in arr]
+```
+```python
+# 풀이 코드 2
+def solution(arr, k):
+    answer = []
+    
+    if k % 2 == 0:
+        for val in arr:
+            answer.append(k + val)
+    else:
+        for val in arr:
+            answer.append(k * val)
+    return answer
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(arr, k):
+    if k % 2 != 0:
+        return list(map(lambda x: x * k, arr))
+    return list(map(lambda x: x + k, arr))
+```
+- `map()` : 리스트 arr의 각 요소를 lambda함수로 처리
+- `lambda x: x * k, lambda x: x  + k`: arr리스트의 각 요소 x에 k를 곱하거나 더한다.
