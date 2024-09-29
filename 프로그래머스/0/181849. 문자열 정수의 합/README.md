@@ -67,3 +67,34 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `map()`, `sum()`, for loop
+
+### 💻 접근법
+인사이트 : string도 iterable한 객체이기에 for loop로 문제풀이
+
+### 📝 슈도코드
+```
+def solution(한 자리 정수로 이루어진 문자열 num_str를 매개변수로 받는다):
+    answer변수를 선언
+    for num_str의 문자열 요소를 순회한다:
+        answer변수에 각 요소를 int로 변환하여 더한다.
+    return answer 변수 반환
+```
+```python
+# 풀이 코드
+def solution(num_str):
+    answer = 0
+    for i in num_str:
+        answer += int(i)
+    return answer
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(num_str):
+    return sum(map(int, num_str))
+```
+- `map(funtion, iterable)` : 문자열의 각 문자를 개별적으로 처리(정수로 변환하는 역할)한다.
