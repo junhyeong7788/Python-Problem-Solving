@@ -72,3 +72,42 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `max()` : 해당 함수 내에 인자가 두개면 두개의 수 중에 더 큰 값을 반환
+
+### 💻 접근법
+인사이트 : sum()와 list slicing을 사용하여 풀이
+
+### 📝 슈도코드
+```
+def solution(정수 리스트 num_list를 매개변수로 받는다):
+    odd list 합 변수 = num_list의 홀수번째 수들의 합
+    even list 합 변수 = num_list의 짝수번재 수들의 합
+    return odd list 합이 even list 합보다 크면 odd list 합을 반환, 아니면 even list합을 반환
+```
+```python
+# 풀이 코드 1
+def solution(num_list):
+    odd_list_sum = sum(num_list[0::2])
+    even_list_sum = sum(num_list[1::2])
+    return odd_list_sum if odd_list_sum > even_list_sum else even_list_sum
+```
+```python
+# 풀이 코드 2 (풀어쓰기)
+def solution(num_list):
+    a = sum(num_list[0::2])
+    b = sum(num_list[1::2])
+    if a > b:
+        return a
+    else:
+        return b
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(num_list):
+    return max(sum(num_list[::2]), sum(num_list[1::2]))
+```
+- `max()` 함수를 사용하면 매개변수 두 수 중에 더 큰 값을 반환한다.
