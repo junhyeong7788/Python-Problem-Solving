@@ -95,3 +95,61 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `endswith()` : 문자열이 특정 접미사로 끝나는지 여부를 확인하는 파이썬 내장 문자열 메서드
+- `my_string[-len(is_suffix):]` : 리스트 슬라이싱을 사용하여 my_string의 끝부분에서 is_suffix와 깉이가 같은 부분을 추출
+
+### 💻 접근법
+- 문자열 my_string의 모든 접미사를 리스트로 생성한 다음, 특정 문자열 is_suffix가 그 리스트에 포함되어 있는지를 확인
+
+### 📝 슈도코드
+```
+def solution(문자열 my_string과 문자열 is_suffix를 매개변수로 받는다):
+    answer 리스트 변수 선언
+    my_string 문자열 길이의 배열을 생성하여 순회한다.
+        answer_list변수에 my_syring[i에서부터 끝까지] 값을 순차적으로 저장한다.
+
+    if is_suffix의 값이 answer 리스트에 있다면
+        return 1을 반환
+    else 없다면
+        return 0을 반환
+```
+```python
+# 풀이 코드 1
+def solution(my_string, is_suffix):
+    answer_list = []
+    for i in range(len(my_string)):
+        answer_list.append(my_string[i:])
+    
+    if is_suffix in answer_list:
+        return 1
+    else:
+        return 0
+```
+```python
+# 풀이 코드 2
+def solution(my_string, is_suffix):
+    answer = [my_string[i:] for i in range(len(my_string))]
+    return 1 if is_suffix in answer else 0
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(my_string, is_suffix):
+    return int(my_string.endswith(is_suffix))
+```
+- `endswith()` : 문자열이 특정 접미사로 끝나는지 여부를 확인하는 파이썬 내장 문자열 메서드
+    - 참 또는 거짓 값을 반환
+- `int()` : endswith()의 불리언 값을 정수로 변환한다.
+    - `int(my_string.endswith(is_suffix))`는 접미사가 맞을 때 1, 아니면 0을 반환 
+2.
+```python
+def solution(my_string, is_suffix):
+    if my_string[-len(is_suffix):]==s: return 1
+    return 0
+```
+- `my_string[-len(is_suffix):]` : 리스트 슬라이싱을 사용하여 my_string의 끝부분에서 is_suffix와 깉이가 같은 부분을 추출
+- `-len(is_suffix) : 문자열의 끝에서부터 is_suffix의 길이만큼 거슬러 올라간 인덱스를 의미
+    - 예 : `my_string = "hello"`이고 `is_suffix = "lo"`라면, `len(is_suffix)`는 2이므로 `my_string[-2:]`이 "lo"를 반환합니다. 즉, 문자열의 끝 두 문자를 추출
