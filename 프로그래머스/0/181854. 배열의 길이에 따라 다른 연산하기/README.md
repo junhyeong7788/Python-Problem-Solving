@@ -72,3 +72,53 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `enumerate(iterable, start=0)`: 반복 가능한 객체의 요소와 해당 요소의 인덱스를 튜플 형태로 반환하는 반복자를 생성
+
+### 💻 접근법
+인사이트 : 처음에 리스트 슬라이싱으로 풀이하려고 하다가 실패하고 리스트 인덱싱 방법으로 풀이
+
+### 📝 슈도코드
+```
+def solution(정수 배열 arr와 정수 n를 매개변수로 받는다):
+    arr리스트이 각 요소에 대해 인덱스와 값을 함께 반복
+        if arr의 길이가 짝수이면:
+            만약 인덱스가 홀수라면:
+                arr의 해당 인덱스에 n을 더한다.
+        else:
+            만약 인덱스가 짝수라면:
+                arr의 해당 인덱스에 n을 더한다.
+    return 구한 arr를 반환한다.
+```
+```python
+# 풀이 코드
+def solution(arr, n):
+    for idx, val in enumerate(arr):
+        if len(arr) % 2 == 0:
+            if idx % 2 == 1:
+                arr[idx] += n
+        else :
+            if idx % 2 == 0:
+                arr[idx] += n
+    return arr
+```
+- `enumerate(arr)`: arr리스트의 각 요소와 그에 해당하는 인덱스를 idx와 val로 동시에 가져온다.
+    - 배열의 요소와 인덱스를 동시에 처리하기 때문에 코드가 직관적이다.
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(arr, n):
+    if len(arr) % 2:
+        for i in range(0, len(arr), 2):
+            arr[i] += n
+    else:
+        for i in range(1, len(arr), 2):
+            arr[i] += n
+    return arr
+```
+- `range(0, len(arr), 2)`: 짝수 인덱스만 순회
+- `range(1, len(arr), 2)`: 홀수 인덱스만 순회
+    - 코드가 간결하고 인덱스 처리를 효율적으로 할 수 있다.
+    - 인덱스의 홀수/짝수 여부를 한번에 처리하므로 반복문에서의 조건문을 최소화할 수 있다.
