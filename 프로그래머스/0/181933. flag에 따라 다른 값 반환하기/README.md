@@ -73,3 +73,34 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `lambda()`
+
+### 💻 접근법
+인사이트 : 불리언 변수 flag의 값이 1일때 참으로 평가, 그 외의 값일때 거짓으로 평가하게 하여 풀이하였다.
+
+### 📝 슈도코드
+```
+def solution(두 정수 a,b 와 불리언 변수 flag를 매개변수로 받는다):
+    return flag가 1(true)일때 a + b를 반환하고 false일때 a-b를 반환
+```
+```python
+# 풀이 코드
+def solution(a, b, flag):
+    return a + b if flag == 1 else a - b
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(a, b, flag):
+    return a + b if flag else a - b
+```
+- `if flag`: flag 자체의 진리성을 평가한다. 0이 아닌 값(불리언 등)은 모두 참으로 간주
+2.
+```python
+solution=lambda a,b,f:[a-b,a+b][f]
+```
+- `[f]`: f는 리스트의 인덱스로 사용됨, f가 0이면 a-b, f가 1이면 a+b를 선택한다.
+- 리스트 인덱싱을 통해 간단하게 조건에 따라 다른 연산 결과를 반환한 풀이
