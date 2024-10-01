@@ -55,3 +55,39 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+
+리스트 컴프리헨션 vs 제너레이터 표현식
+- 리스트 컴프리헨션 : 대괄호 [] 로 감싸서 리스트를 즉시 생성, 메모리 상에서 리스트 전체를 생성한 후에 이를 처리
+- 제너레이터 표현식 : 대괄호 대신 소괄호 ()를 사용하여 필요한 시점에 값을 하나씩 생성하는 방식, 메모리 효율이 더 좋고, 전체 리스트를 생성하지 않으므로 성능이 더 좋을 수 있다. 
+
+### 💻 접근법
+인사이트 : 정수 n을 배열의 요소로 나누었을때 나머지가 0인 것들은 정수 n의 약수이다.
+
+### 🚫 문제해결 중 발생한 에러
+- `ZeroDivisionError: integer division or modulo by zero`: 파이썬에서 0으로 나누는 연산을 시도할 때 발생하는 오류
+    - `range(n+1)`로 생성된 배열에는 0부터 생성되었기 때문에 0을 나눌수 없어서 발생한 오류 -> `range(1, n+1)`
+
+### 📝 슈도코드
+```
+def solution(정수 n을 매개변수로 받는다):
+    return 1~n+1의 배열을 생성하고 배열의 요소를 i로 순회한다. n을 i로 나눴을때 나머지가 0인 것의 i를 리스트에 추가, 그 이후 리스트 요소의 합을 반환
+```
+```python
+# 풀이 코드
+def solution(n):
+    return sum(i for i in range(1, n+1) if n % i == 0)
+```
+- 제러레이터 표현식으로 대괄호 없이 작성되어 값을 하나씩 생성하여 `sum()` 함수에 전달한다.
+
+```python
+# 풀이 코드 풀어 쓰기
+def solution(n):
+    answer = 0
+    for i in range(1,n+1):
+        if n % i == 0:
+            answer += i
+    return answer
+```
+
