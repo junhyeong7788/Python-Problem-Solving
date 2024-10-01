@@ -72,3 +72,30 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- 삼항연산자
+- `int()` : 정수로 변환하는 함수로 불리언값을 1과 0으로 변환할 수 있다.
+
+### 💻 접근법
+인사이트 : if문을 사용, 정수리스트내에 정수n 포함 여부를 in연산자를 사용하여 풀이.
+
+### 📝 슈도코드
+```
+def solution(정수리스트 num_list와 정수 n을 매개변수로 받는다):
+    return num_list리스트 안에 정수 n이 있으면 1을 반환, 없으면 0을 반환
+```
+```python
+# 풀이 코드
+def solution(num_list, n):
+    return 1 if n in num_list else 0
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(num_list, n):
+    return int(n in num_list)
+```
+- `n in num_list`: 파이썬의 in연산자로, 리스트 num_list에 값 n이 포함되어 있는지 여부를 불리언 값으로 반환
+- `int()` : True와 False는 파이썬에서 각각 1과 0으로 반환 될 수 있다. 따라서 int() 함수는 불리언 값을 정수 값으로 변환한다.
