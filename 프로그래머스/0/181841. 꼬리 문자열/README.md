@@ -74,3 +74,47 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `filter(lambda x: ex not in x, str_list)`
+    - `filter(function, iterable)` : iterable의 각 요소에 대해 조건 함수를 적용하여 True인 요소만 반환
+    - `lambda x: ex not in x`: x라는 리스트 요소가 주어졌을 때, ex가 x에 포함되지 않으면 True를 반환
+
+### 💻 접근법
+인사이트 : 문자열 리스트에서 특정 문자열 ex가 포함되지 않은 항목만 선택하여 하나의 문자열로 결합
+
+### 📝 슈도코드
+```
+def solution(문자열 리스트 str_list와 문자열 ex를 매개변수로 받는다):
+    new_list 선언
+    for 문자열 str_list를 순회:
+        if i 안에 ex가 포함되어있지 않으면:
+            new_list변수에 i를 추가
+    return new_list를 문자열로 결합
+```
+```python
+# 풀이 코드 1
+def solution(str_list, ex):
+    new_list = []
+    for i in str_list:
+        if ex not in i:
+            new_list.append(i)
+    return ''.join(new_list)
+```
+- `if ex not in i`: 문자열 i가 ex를 포함하지 않을 경우에만 Ture
+```python
+# 풀이 코드 2
+def solution(str_list, ex):
+    return ''.join(i for i in str_list if ex not in i)
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(str_list, ex):
+    return ''.join(filter(lambda x: ex not in x, str_list))
+```
+- 문자열 리스트에서 특정 문자열 ex가 포함되지 않은 항목을 `필터링` 한 후, 그 항목들을 하나의 문자열로 결합하여 반환
+- `filter(lambda x: ex not in x, str_list)`
+    - `filter(function, iterable)` : iterable의 각 요소에 대해 조건 함수를 적용하여 True인 요소만 반환
+    - `lambda x: ex not in x`: x라는 리스트 요소가 주어졌을 때, ex가 x에 포함되지 않으면 True를 반환
