@@ -68,3 +68,38 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- strip메소드로 문자열 삭제
+    -  `lstrip()` : 왼쪽 끝단의 불필요한 문자열을 삭제
+    -  `strip()` : 양 끝단의 불필요한 문자열을 삭제
+    -  `rstip()` : 오른쪽 끝단의 불필요한 문자열을 삭제
+
+### 💻 접근법
+인사이트 : `lstrip()` 함수 사용하여 풀이
+
+### 📝 슈도코드
+```
+def solution(문자열 n_str를 매개변수로 받는다):
+    return n_str 문자열의 왼쪽 0을 모두 제거한 값을 반환
+```
+```python
+# 풀이 코드
+def solution(n_str):
+    return n_str.lstrip('0')
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(n_str):
+    for i in range(len(n_str)):
+        if n_str[i] != "0":
+            return n_str[i:]
+```
+```
+def solution(문자열 n_str를 매개변수로 받는다):
+    for n_str의 문자열 길이 만큼 각 요소를 순회한다.
+        if n_str 문자열의 [i]번쨰 인덱스에 0이 없으면 
+            return 해당 인덱스부터 끝까지의 부분 문자열을 반환
+```
