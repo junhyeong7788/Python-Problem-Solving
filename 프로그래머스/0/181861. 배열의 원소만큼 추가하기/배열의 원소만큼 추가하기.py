@@ -1,5 +1,5 @@
 def solution(arr):
-    return sum([[i]*i for i in arr], [])
-
-
-
+    answer = []
+    for num in arr:
+        answer += [num] * num
+    return answer
