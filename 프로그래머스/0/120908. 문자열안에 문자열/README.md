@@ -83,3 +83,33 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- not in, in, int()
+
+### 💻 접근법
+인사이트 : 불리언 연산자를 사용하여 문제에 지정된 반환값 반환
+
+### 📝 슈도코드
+```
+def solution(문자열 str1과 str2를 매개변수로 받는다):
+    return str2가 str1안에 있다면 1을 반환 없으면 2를 반환
+```
+```python
+# 풀이 코드
+def solution(str1, str2):
+    return 1 if str2 in str1 else 2
+```
+```python
+def solution(str1, str2):
+    if str2 in str1:
+        return 1
+    else:
+        return 2
+```
+### 👍 다른 정답 코드
+1.
+```python
+def solution(str1, str2):
+    return 1 + int(str2 not in str1) 
+```
