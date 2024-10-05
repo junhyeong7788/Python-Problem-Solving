@@ -58,3 +58,43 @@
       </table>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `abs()` : 주어진 수의 절대값을 반환 / 정수, 실수, 복소수의 절대값을 계산하는 데 사용될 수 있으며, 매우 간단하고 직관적인 기능을 제공
+
+### 💻 접근법
+인사이트 : a와 b의 순서에 상관없이 a와 b를 포함한 사이에 속한 모든 정수의 합을 리턴해야한다.
+- if문을 사용하여 리스트 생성 후 합을 구하는 방법으로 풀이
+- 다른 정답 코드에서 `abs()`함수를 사용하면 시간이 0.00ms가 나온다.
+
+### 📝 슈도코드
+```
+def solution(두 정수 a와 b를 매개변수로 받는다):
+    if a가 b보다 크면
+        return a~b+1의 리스트를 생성하여 리스트의 합을 반환
+    else b가 a보다 크면
+        return b~a+1의 리스트를 생성하여 리스트의 합을 반환
+```
+```python
+# 풀이 코드
+def solution(a, b):
+    if a < b:
+        return sum(range(a, b+1))
+    else :
+        return sum(range(b, a+1))
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(a, b):
+    return sum(range(min(a, b), max(a, b)+1))
+```
+- min, max 함수를 사용하여 a와 b 사이의 모든 수를 생성
+2.
+```python
+def solution(a, b):
+    return (abs(a-b)+1)*(a+b)//2
+```
+- 등차수열의 합 공식을 사용 : $S = \frac{n}{2} \times (a_1 + a_n)$, n은 항의 수, a_1 과 a_n은 첫 항과 마지막 항
+    - `abs(a-b)+1` : a와 b사이의 숫자 개수를 계산하고 (a+b)//2는 첫 항과 마지막 항의 평균을 구한다.
