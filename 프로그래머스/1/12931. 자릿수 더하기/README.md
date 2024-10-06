@@ -58,3 +58,30 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- list comprehension, map(), sum()
+
+### 💻 접근법
+인사이트 : 자연수 N의 각 자릿수를 배열의 요소로 만들어서 배열의 합을 구하는 방법으로 풀이
+
+### 📝 슈도코드
+```
+def solution(자연수 N을 매개변수로 받는다):
+    return n을 각 자릿수의 문자열을 정수형으로 반환하여 리스트를 생성하고 그 리스트의 각 요소를 모두 더한 값을 반환
+```
+```python
+# 풀이 코드
+def solution(n):
+    return sum(list(map(int, str(n))))
+```
+- `map(int, str(n)` : 첫 번째 인자인 함수 int를 두 번째 인자인 반복 가능한 객체(str(n))의 각 요소에 적용
+    - ex : `'1', '2', '3'`이라는 문자는 `int('1'), int('2'), int('3')` 을 통해 각각 정수 1,2,3으로 변환
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(n):
+    return sum(int(i) for i in str(n))
+```
+- 리스트 컴프리헨션으로 풀이
