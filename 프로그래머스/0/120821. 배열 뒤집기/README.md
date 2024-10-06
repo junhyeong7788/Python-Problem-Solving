@@ -78,3 +78,37 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `reversed()`
+- 다른 풀이 : 리스트 슬라이싱으로 뒤에서부터 반환
+
+### 💻 접근법
+인사이트 : 처음에는 정렬을 reverse하려고 하였으나, 테스트 풀이 3번은 정렬을 하면 안된다.
+- 그래서 리스트 자체를 reverse하는 함수를 사용
+
+### 📝 슈도코드
+```
+def solution(정수가 들어있는 배열 num_list를 매개변수로 받는다):
+    return num_list의 요소를 뒤집어 순회한 값으로 리스트를 생성하여 반환
+```
+```python
+# 풀이 코드 1
+def solution(num_list):
+    return [i for i in reversed(num_list)]
+```
+```python
+# 풀이 코드 2
+def solution(num_list):
+    answer = []
+    for i in reversed(num_list):
+        answer.append(i)
+    return answer
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(num_list):
+    return num_list[::-1]
+```
