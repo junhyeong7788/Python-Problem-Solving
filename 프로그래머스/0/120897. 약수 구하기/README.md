@@ -67,3 +67,25 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : for loop와 if문을 사용하여 리스트 생성 후 약수 구하기
+
+### 📝 슈도코드
+```
+def solution(정수 n을 매개변수로 받는다):
+    return 1~n+1만큼의 리스트 생성 후 리스트 요소를 순회, n을 i로 나눴을 때 나머지가 0인 것을 리스트로 만들어 반환
+```
+```python
+# 풀이 코드
+def solution(n):
+    return [i for i in range(1,n+1) if n%i ==0]
+```
+```python
+def solution(n):
+    answer = []
+    for i in range(1,n+1):
+        if n % i == 0:
+            answer.append(i)
+    return answer
+```
