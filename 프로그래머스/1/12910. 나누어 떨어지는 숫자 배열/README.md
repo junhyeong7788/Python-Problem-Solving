@@ -70,3 +70,52 @@ arr의 모든 원소는 1으로 나누어 떨어집니다. 원소를 오름차�
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `filter()` : 주어진 함수의 조건을 만족하는 요소만을 걸러내는 함수
+
+### 💻 접근법
+인사이트 : arr의 요소들을 divisor로 나누어 떨어지는 값들을 answer 리스트에 추가하고 나누어 떨어지는 요소가 하나도 없으면 -1을 answer 리스트에 추가
+
+### 📝 슈도코드
+```
+def solution( 자연수를 담은 arr 리스트와 자연수 divisor를 매개변수로 받는다):
+    answer 변수 선언
+    for arr리스트의 요소를 순회:
+        if i를 divisor로 나누었을때 나머지가 0이면:
+            answer리스트에 i를 추가
+    if answer리스트 길이가 0이면:
+        answer리스트에 -1을 추가
+    return answer리스트를 오름차순으로 정렬한 값을 반환
+```
+```python
+# 풀이 코드
+def solution(arr, divisor):
+    answer = []
+    for i in arr:
+        if i % divisor == 0:
+            answer.append(i)
+            
+    if len(answer) == 0:
+        answer.append(-1)
+    return sorted(answer)
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(arr, divisor):
+    answer = [i for i in arr if i % divisor == 0]
+    return sorted(answer) if answer else [-1]
+```
+- 리스트 컴프리헨션 사용
+- 조건부 표현식 사용
+2.
+```python
+def solution(arr, divisor):
+    answer = sorted(filter(lambda x: x % divisor == 0, arr))
+    return answer if answer else [-1]
+```
+- `filter()` : 주어진 함수의 조건을 만족하는 요소만을 걸러내는 함수
+    - `lambda x: x % divisor == 0`: arr의 요소들을 divisor로 나누어떨어지는 요소들만 남김
+- 해당 코드는 리스트를 한 번만 생성한다.
