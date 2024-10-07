@@ -1,6 +1,2 @@
 def solution(n):
-    sqrt_num = n**(1/2)
-    if n % sqrt_num == 0:
-        return (sqrt_num+1)**2
-    else:
-        return -1
+    return ((n**(1/2))+1)**2 if n % (n**(1/2)) == 0 else -1
