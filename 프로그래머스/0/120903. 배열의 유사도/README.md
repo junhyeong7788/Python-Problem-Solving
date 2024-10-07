@@ -73,3 +73,38 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `set()` : 집합은 중복된 요소를 허용하지 않으며, 각 요소는 고유하게 유지된다.
+
+### 💻 접근법
+인사이트 : 불리언 연산자, 리스트 생성 후 길이를 구하는 것으로 풀이
+
+### 📝 슈도코드
+```
+def solution(문자열 배열 s1과 s2를 매개변수로 받는다):
+    return s1의 요소를 순회하는 i가 s2안에 있는 i를 리스트로 생성, 리스트의 길이를 반환
+```
+```python
+# 풀이 코드 1
+def solution(s1, s2):
+    return len(list(i for i in s1 if i in s2))
+```
+```python
+# 풀이 코드 2
+def solution(s1, s2):
+    answer = 0
+    for i in s1:
+        if i in s2:
+            answer += 1
+    return answer
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(s1, s2):
+    return len(set(s1)&set(s2))
+```
+- 주어진 두 리스트 s1과 s2를 집합으로 변환하여 교집합을 구하고, 그 교집합의 크기를 반환
+- `set()` : 집합은 중복된 요소를 허용하지 않으며, 각 요소는 고유하게 유지된다.
