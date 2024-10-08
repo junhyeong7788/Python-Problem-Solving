@@ -48,3 +48,43 @@
       </table>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `max()`, `min()`
+- `return [-1]` : 바로 [-1]값을 반환
+
+### 💻 접근법
+인사이트 : 처음에는 arr의 요소를 answer리스트에 저장하여 제거하려고 하였는데 시간초과 발생
+- 바로 arr의 길이에 따라 if문을 작성하여 풀이
+
+### 📝 슈도코드
+```
+def solution(정수를 저장한 배열 arr를 매개변수로 받는다):
+    if arr의 길이가 1 초과이면:
+        arr리스트에서 가장 작은 값을 제거한다.
+        return arr리스트 반환
+    else (arr의 길이가 1 이하이면) :
+        return [-1]값을 반환
+```
+```python
+# 풀이 코드
+def solution(arr):
+    if len(arr) > 1:
+        arr.remove(min(arr))
+        return arr
+    else:
+        return [-1]
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(arr):
+    answer = []
+    if len(arr) <= 1:
+        answer.append(-1) 
+    else:
+        arr.remove(min(arr))
+        answer = arr
+    return answer
+```
