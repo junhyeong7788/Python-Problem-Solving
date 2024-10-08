@@ -96,3 +96,52 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : if문, len(arr), sum(arr)로 문제 풀이
+
+### 📝 슈도코드
+```
+def solution(정수 배열 arr1과 arr2를 매개변수로 받는다):
+    if arr1의 길이와 arr2의 길이가 같으면:
+        if arr1의 합이 arr2합보다 크면:
+            return 1
+        elif arr1의 합이 arr2합보다 작으면:
+            return -1
+        else:
+            return 0
+    elif arr1의 길이가 arr2의 길이보다 작으면:
+        return -1
+    else :
+        return 1
+```
+```python
+# 풀이 코드
+def solution(arr1, arr2):
+    if len(arr1) == len(arr2):
+        if sum(arr1) > sum(arr2):
+            return 1
+        elif sum(arr1) < sum(arr2):
+            return -1
+        else:
+            return 0
+    elif len(arr1) < len(arr2):
+        return -1
+    else :
+        return 1
+```
+
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(arr1, arr2):
+    len1, len2 = len(arr1), len(arr2)
+    sum1, sum2 = sum(arr1), sum(arr2)
+    
+    if len1 != len2:
+        return 1 if len1 > len2 else -1
+    return 1 if sum1 > sum2 else -1 if sum1 < sum2 else 0
+```
+- 중복 제거 : 변수 선언으로 중복 제거
+- 조건부 표현식을 삼항 연산자로 간결하게 표현했다.
