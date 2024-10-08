@@ -75,3 +75,35 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `int()`
+
+### 💻 접근법
+인사이트 : 불리안 연산자를 사용하여 문자열 내에 부분 문자열이 있는지 여부를 반환
+
+### 📝 슈도코드
+```
+def solution(문자열 my_string과 target를 매개변수로 받는다):
+    return my_string안에 target문자열이 있으면 1 반환 없으면 0 반환
+```
+```python
+# 풀이 코드
+def solution(my_string, target):
+    return 1 if target in my_string else 0
+```
+```python
+def solution(my_string, target):
+    if target in my_string:
+        return 1
+    else: 
+        return 0
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(my_string, target):
+    return int(target in my_string)
+```
+- `int()`와 불리안 연산자를 사용하여 True값은 1로 False값은 0으로 바꾼 값을 반환한다.
