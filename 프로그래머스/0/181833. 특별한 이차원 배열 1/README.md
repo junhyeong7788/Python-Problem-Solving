@@ -191,3 +191,27 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `answer = [[0]*n for _ in range(n)]`: 변수 i대신 _를 사용하여 불필요한 변수 삭제 가능
+
+### 💻 접근법
+인사이트 : 2차원 배열 생성 후, 2차원 배열 요소를 순회하면서 특별한 위치에 1을 추가
+
+### 📝 슈도코드
+```
+def solution(정수 n를 매개변수로 받는다):
+    answer 변수 선언 = n * n 크기의 2차원 리스트 생성
+    for 0부터 n-1까지 반복:
+        answer배열의 각 [i][i] 행과 열의 인덱스, 대각선 요소에 1로 설정
+    return answer 리스트를 반환
+```
+```python
+# 풀이 코드
+def solution(n):
+    answer = [[0]*n for i in range(n)]
+    for i in range(n):
+        answer[i][i] = 1
+    return answer
+```
+- `answer = [[0]*n for _ in range(n)]`: 변수 i대신 _를 사용하여 불필요한 변수 삭제 가능
