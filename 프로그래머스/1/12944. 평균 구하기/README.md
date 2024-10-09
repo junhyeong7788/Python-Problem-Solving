@@ -48,3 +48,17 @@
       </table>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : 배열의 합을 구하는 `sum()`와 배열의 길이를 구하는 `len()` 함수를 사용하여 간단하게 풀이
+
+### 📝 슈도코드
+```
+def solution(정수를 담은 arr 리스트를 매개변수로 받는다):
+    return arr배열의 합 / arr배열의 길이
+```
+```python
+# 풀이 코드
+def solution(arr):
+    return sum(arr)/len(arr)
+```
