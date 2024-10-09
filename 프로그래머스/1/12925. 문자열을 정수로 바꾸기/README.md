@@ -37,4 +37,18 @@
 str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.</p>
 
 
-> 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+> 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges\
+---
+### 💻 접근법
+인사이트 : int()로 간단하게 형변환하여 풀이
+
+### 📝 슈도코드
+```
+def solution(문자열 s를 매개변수로 받는다):
+    return 문자열 s를 정수형으로 변환
+```
+```python
+# 풀이 코드
+def solution(s):
+    return int(s)
+```
