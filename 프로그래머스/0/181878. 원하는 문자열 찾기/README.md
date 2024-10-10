@@ -74,3 +74,32 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `upper()`, `lower()`, `swapcase()`
+
+### 💻 접근법
+인사이트 : 처음에는 `.swapcase()`로 대소문자를 바꿔서 풀이하려고 했는데, 문제에 `단, 알파벳 대문자와 소문자는 구분하지 않습니다.`를 보고 모두 대문자나 소문자로 바꿔서 풀이하였다.
+
+### 📝 슈도코드
+```
+def solution(문자열 myString와 pat을 매개변수로 받는다):
+    pat문자열을 모두 대문자로 바꾼다.
+    myString문자열을 모두 대문자로 바꾼다.
+    return upStr이 up_myStr안에 있으면 1을 반환, 없으면 0을 반환
+```
+```python
+# 풀이 코드
+def solution(myString, pat):
+    upStr = pat.upper()
+    up_myStr = myString.upper()
+    return int(upStr in up_myStr)
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(myString, pat):
+    return int(pat.lower() in myString.lower())
+```
+- 변수 선언 하지 않고 바로 반환값에서 메서드 사용하여 풀이
