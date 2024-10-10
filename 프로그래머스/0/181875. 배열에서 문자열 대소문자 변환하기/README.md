@@ -76,3 +76,54 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `enumerate()`
+
+### 💻 접근법
+인사이트 : 문자열 길이만큼의 요소를 반복하여 strArr변수의 요소가 짝수인지 홀수인지 파악하여 조건에 맞게 풀이한다.
+
+### 📝 슈도코드
+```
+def solution(문자열 배열 strArr를 매개변수로 받는다):
+    answer 변수 선언
+    for 0 ~ 문자열 길이만큼의 배열의 요소를 반복:
+        if i가 짝수이면:
+            answer변수에 strArr[i] 인덱스를 소문자로 추가한다.
+        else:
+            answer변수에 strArr[i]인덱스를 대문자로 추가한다.
+    return answer 리스트를 반환
+```
+```python
+# 풀이 코드
+def solution(strArr):
+    answer = []
+    for i in range(len(strArr)):
+        if i % 2 == 0:
+            answer.append(strArr[i].lower())
+        else:
+            answer.append(strArr[i].upper())
+    return answer
+```
+```python
+def solution(strArr):
+    return [strArr[i].lower() if i % 2 == 0 else strArr[i].upper() for i in range(len(strArr))]
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(strArr):
+    return [s.lower() if i % 2 == 0 else s.upper() for i, s in enumerate(strArr)]
+```
+```python
+# 위 코드 풀어쓰기
+def solution(strArr):
+    answer = []
+    for idx, val in enumerate(strArr):
+        if idx % 2 == 0:
+            answer.append(val.lower())
+        else: 
+            answer.append(val.upper())
+    return answer
+```
