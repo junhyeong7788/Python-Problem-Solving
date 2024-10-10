@@ -70,3 +70,32 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `split()` : 문자열을 공백 문자를 기준으로 분리하여 리스트를 반환한다.
+    - 인자가 없이 호출하면 연속된 공백을 하나의 구분자로 처리하고, 문자열의 앞뒤에 있는 공백도 무시한다.
+    - 따라서 여러 개의 공백이나 앞뒤 공백이 있어도 정확하게 단어를 분리해낸다.
+
+### 💻 접근법
+인사이트 : 파이썬 리스트 공백 제거 함수 `split()` 사용하여 풀이
+
+### 📝 슈도코드
+```
+def solution(문자열 my_string을 매개변수로 받는다):
+    return my_string의 문자열 공백을 제거하고 결합한 값을 반환
+```
+```python
+# 풀이 코드
+def solution(my_string):
+    return ''.join(my_string).split()
+```
+- 정답으로 제출하였지만 불필요한 함수가 포함
+- 아래 코드로 사용
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(my_string):
+    return my_string.split()
+```
+- my_string은 이미 문자열이므로 `''.join()`는 불필요하다.
