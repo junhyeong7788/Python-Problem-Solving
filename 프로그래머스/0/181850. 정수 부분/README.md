@@ -67,3 +67,31 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `int()`
+
+### 💻 접근법
+인사이트 : 형변환으로 간단하게 풀이
+
+### 📝 슈도코드
+```
+def solution(실수 flo를 매개변수로 받는다):
+    return flo를 int형으로 변환한 값을 반환
+```
+```python
+# 풀이 코드
+def solution(flo):
+    return int(flo)
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(flo):
+    return flo//1
+```
+- `//연산자` : 버림 나눗셈(floor division)
+- flo를 1로 나눈 후, 결과를 소수점 아래를 버리고 가장 가까운 작거나 같은 정수를 반환
+- 하지만 해당 코드의 결과는 float 타입이고 음수일 때 더 작은 정수로 내림(floor)을 한다.
+    - `-3.7 // 1 = -4.0`
