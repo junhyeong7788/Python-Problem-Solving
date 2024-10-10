@@ -77,3 +77,41 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `int(불리안 연산자)`, if문내에서 비교연산자로 문자열 비교도 가능
+
+### 💻 접근법
+인사이트 : 리스트로 만들어서 문자열로 결합하는 것으로 풀이
+
+### 📝 슈도코드
+```
+def solution(문자열 myString과 pat을 매개변수로 받는다):
+    answer 변수 선언
+    for myString의 요소를 반복:
+        if i == "A"이면:
+            answer리스트에 "B" 추가
+        else:
+            answer리스트에 "A" 추가
+    answer리스트를 문자열로 결합
+    return myString문자열 안에 pat 문자열이 존재하면 1 반환, 없으면 0 반환
+```
+```python
+# 풀이 코드
+def solution(myString, pat):
+    answer = "".join("B" if i == "A" else "A" for i in myString)
+    return int(pat in answer)
+```
+```python
+# 풀어 쓰기
+def solution(myString, pat):
+    answer = []
+    for i in myString:
+        if i == "A":
+            answer.append("B")
+        else:
+            answer.append("A")
+    answer = "".join(answer)
+    
+    return 1 if pat in answer else 0
+```
