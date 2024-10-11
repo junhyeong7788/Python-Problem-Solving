@@ -76,3 +76,47 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- 문자열은 불변 객체이므로 직접 수정 불가 -> 리스트로 변환해서 수정
+- 리스트는 가변 객체이므로, 인덱스 기반으로 직접 원소를 변경할 수 있다.
+
+### 💻 접근법
+인사이트 : `enumerate()`를 사용하여 if문으로 조건을 주어 문자를 바꾼 문자열을 반환하는 것으로 풀이
+
+### 📝 슈도코드
+```
+def solution(문자열 my_string과 정수 num1와 num2를 매개변수로 받는다):
+    answer 변수 선언
+    for my_string를 인덱스와 함께 튜플 형태로 반환하여 각 요소를 반복:
+        if 인덱스 i가 num2와 같다면:
+            answer리스트에 my_string[num1] 값을 추가한다.
+        elif 인덱스 i가 num1와 같다면:
+            answer리스트에 my_string[num2] 값을 추가한다.
+        else:
+            answer리스트에 나머지 요소를 추가한다.
+    return 배열을 문자열로 결합한 값을 반환
+```
+```python
+# 풀이 코드
+def solution(my_string, num1, num2):
+    answer = []
+    for i, v in enumerate(my_string):
+        if i == num2:
+            answer.append(my_string[num1])
+        elif i == num1:
+            answer.append(my_string[num2])
+        else:
+            answer.append(v)
+    return ''.join(answer)
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(my_string, num1, num2):
+    strList = list(my_string)
+    strList[num1], strList[num2] = strList[num2], strList[num1]
+    return ''.join(strList)
+```
+- 다중 할당을 사용하여 값 교환 : `strList[num1], strList[num2]`에 각각 `strList[num2], strList[num1]`의 값을 할당하여 **서로의 값을 교환**
