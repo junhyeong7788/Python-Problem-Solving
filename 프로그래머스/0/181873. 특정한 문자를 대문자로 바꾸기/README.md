@@ -70,3 +70,33 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : 
+1. `replace()` 함수를 사용하여 간단하게 풀이
+2. enumerate를 사용하여 특정 문자를 찾아 대문자로 변환하여 구현
+
+### 📝 슈도코드
+```
+def solution(문자열 my_string와 문자열 alp를 매개변수로 받는다):
+    return my_string의 alp를 alp.upper()한 문자로 대체한 값을 반환
+```
+```python
+# 풀이 코드 1
+def solution(my_string, alp):
+    answer = []
+    strList = list(my_string)
+    for i, v in enumerate(strList):
+        if v == alp:
+            answer.append(v.upper())
+        else:
+            answer.append(v)
+        
+    return ''.join(answer)
+```
+```python
+# 풀이 코드 2
+def solution(my_string, alp):
+    return my_string.replace(alp, alp.upper())
+```
+
