@@ -59,3 +59,18 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : 리스트 슬라이싱을 사용하여 풀이
+
+```python
+# 풀이 코드
+def solution(names):
+    return names[0::5]
+```
+
+### 👍 다른 정답 코드
+```python
+def solution(names):
+    return names[::5]
+```
