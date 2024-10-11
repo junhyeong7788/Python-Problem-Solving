@@ -1,10 +1,10 @@
 # [level 0] 직각삼각형 출력하기 - 120823 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120823) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120823?language=python3) 
 
 ### 성능 요약
 
-메모리: 7.63 MB, 시간: 16.60 ms
+메모리: 7.53 MB, 시간: 33.39 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 10월 11일 14:08:18
+2024년 10월 11일 14:09:12
 
 ### 문제 설명
 
