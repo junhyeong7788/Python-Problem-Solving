@@ -77,3 +77,33 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- 문자열 자체는 정렬이 불가능하다. 하지만 `sorted()`는 문자열을 리스트처럼 취급하여 각 문자를 정렬한 리스트로 반환한다.
+
+### 💻 접근법
+인사이트 : 변수 선언, `lower()`, `sorted()`, `''.join()`등을 이용하여 풀이
+
+### 📝 슈도코드
+```
+def solution(문자열 my_string을 매개변수로 받는다):
+    lowStr 변수 선언 = my_string문자열을 소문자로 바꾼다.
+    strList 변수 선언 = lowStr문자열을 리스트로 만든다.
+    return strList를 알파벳순서로 정렬한 후 문자열로 결합한 값을 반환
+```
+```python
+# 풀이 코드
+def solution(my_string):
+    lowStr = my_string.lower()
+    strList = list(lowStr)
+    return ''.join(sorted(strList))
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(my_string):
+    return ''.join(sorted(my_string.lower()))
+```
+- `sorted()` : 이터러블 객체를 입력으로 받아, 그 내부 요소를 정렬한 후 새로운 리스트로 반환
+    - 문자열을 입력으로 받으면, 문자열을 리스트로 변환하여 각 문자를 개별적으로 정렬한 후 그 결과를 반환
