@@ -75,3 +75,37 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : 
+```python
+for i in arr:
+    if i in delete_list:
+        arr.remove(i)
+```
+- 처음 풀이는 `delete_list` 안에 있으면 그 요소를 제거하는 것으로 풀이하였는데 문제의 정확도가 30%였다.
+- 이후 `delete_list`에 없는 요소를 answer리스트에 추가하는 것으로 풀이
+
+### 📝 슈도코드
+```
+def solution(정수 배열 arr와 delete_list를 매개변수로 받는다):
+    answer 변수 선언
+    for arr의 요소를 반복:
+        if delete_list안에 i가 없으면:
+            answer 리스트에 i를 추가
+    return answer 리스트 반환
+```
+```python
+# 풀이 코드
+def solution(arr, delete_list):
+    answer = []
+    for i in arr:
+        if i not in delete_list:
+            answer.append(i)
+    return answer
+```
+```python
+# list comprehension
+def solution(arr, delete_list):
+    return [i for i in arr if i not in delete_list]
+```
