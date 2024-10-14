@@ -1,6 +1,5 @@
 def solution(num, k):
-    for i, v in enumerate(str(num)):
-        if str(k) == v:
-            return i + 1
-    if str(num) not in str(k) :
-        return -1
+    k_str = str(k)
+    num_str = str(num)  
+    index = num_str.find(k_str)
+    return index + 1 if index != -1 else -1
