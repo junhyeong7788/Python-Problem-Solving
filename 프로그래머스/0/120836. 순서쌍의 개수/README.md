@@ -67,3 +67,61 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `filter(function, iterable)`: 주어진 함수 function이 참인 요소들만 모아서 새로운 이터레이터를 반환
+- 제곱근 범위 반복 
+
+### 💻 접근법
+인사이트 : 
+- `n % a == 0`: 정수 n의 약수
+- `b = n // a` : b는 a에 대응하는 약수로, n을 a로 나눈 몫
+- `(a, b)` : 약수의 순서쌍
+
+### 📝 슈도코드
+```
+def solution(정수 n을 매개변수로 받는다):
+    변수 a 선언
+    pairs 리스트 선언
+    for 1 ~ n+1의 리스트를 생성하고 a로 리스트 요소를 반복:
+        if 정수 n을 a로 나누었을 때 나머지가 0과 같다면:
+            변수 b = 정수 n을 a로 나눴을 때의 몫
+            pairs리스트에 (a,b) 로 저장
+    return pairs 리스트의 길이를 반환
+```
+```python
+# 풀이 코드
+def solution(n):
+    a = 0
+    pairs = []
+    for a in range(1, n+1):
+        if n % a == 0:
+            b = n // a
+            pairs.append((a, b))
+    return len(pairs)
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+# ChatGPT 코드 개선
+def solution(n):
+    pairs_count = 0
+    for a in range(1, int(n**0.5) + 1):
+        if n % a == 0:
+            pairs_count += 1  # a는 n % a == 0
+            if a != n // a:  
+                pairs_count += 1 # b는 n // a 
+    return pairs_count
+```
+- 해당 코드로 진행 시 시간복잡도가 많이 낮아졌다.
+- 제곱근 범위 반복 `for a in range(1, int(n**0.5) + 1)` :  a는 1부터 $\sqrt{n}$ 까지 반복, 약수를 찾는 데 필요한 횟수를 대폭 줄여, 최대 $\sqrt{n}$번의 반복으로 시간복잡도가 $O(\sqrt{n})$로 개선
+    - ex: n = 36일 경우 a는 1,2,3,4,5,6까지 반복
+- 대칭성 활용 : ` a \times b = n` 의 성질을 활용, $b$는 $n//a$로 계산되며, a와 b가 다를 경우에만 카운트한다. (= 중복된 쌍을 방지)
+2.
+```python
+def solution(n):
+    return len(list(filter(lambda v: n % (v+1) == 0, range(n))))
+```
+- `filter(function, iterable)`: 주어진 함수 function이 참인 요소들만 모아서 새로운 이터레이터를 반환
+    - n의 약수들, 즉 n을 v+1로 나누었을 때 나누어떨어지는 숫자들만 추출
