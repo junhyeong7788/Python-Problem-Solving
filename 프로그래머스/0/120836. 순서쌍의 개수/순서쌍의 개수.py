@@ -1,8 +1,8 @@
 def solution(n):
-    a = 0
-    pairs = []
-    for a in range(1, n+1):
+    pairs_count = 0
+    for a in range(1, int(n**0.5) + 1):
         if n % a == 0:
-            b = n // a
-            pairs.append((a, b))
-    return len(pairs)
+            pairs_count += 1  
+            if a != n // a:  
+                pairs_count += 1  
+    return pairs_count
