@@ -69,3 +69,56 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `from math import prod` : 파이썬 표준 라이브러리 math 모듈에서 prod함수를 가져오는 코드
+    - `prod()` : 주어진 iterable의 모든 요소를 곱한 값을 반환
+-  `eval()`함수와 문자열 조작을 사용하여 계산을 수행하는 방식을 사용
+
+### 💻 접근법
+인사이트 : if문으로 문자열 길이의 조건을 만들고 배열의 요소 반복으로 곱을 구한다.
+
+### 📝 슈도코드
+```
+def solution(정수 리스트 num_list를 매개변수로 받는다):
+    answer 변수선언
+    if num_list길이가 10 이하이면:
+        for num_list의 모든 요소를 반복:
+            answer = answer * i
+        return answer 값을 반환
+    else (길이가 11이상이면):
+        return num_list의 모든 요소의 합 반환
+```
+```python
+# 풀이 코드
+def solution(num_list):
+    answer = 1
+    if len(num_list) <= 10:
+        for i in num_list:
+            answer *= i
+        return answer
+    else:
+        return sum(num_list)
+
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+from math import prod
+def solution(num_list):
+    return sum(num_list) if len(num_list)>=11 else prod(num_list)
+```
+- `from math import prod` : 파이썬 표준 라이브러리 math 모듈에서 prod함수를 가져오는 코드
+- `prod()` : 주어진 iterable의 모든 요소를 곱한 값을 반환
+- 코드 실행 시간이 제일 낮게 나왔다.
+2.
+```python
+def solution(num_list):
+    if len(num_list) >= 11:
+        return eval('+'.join(list(map(str, num_list))))
+    else:
+        return eval('*'.join(list(map(str, num_list))))
+```
+-  `eval()`함수와 문자열 조작을 사용하여 계산을 수행하는 방식을 사용
+-  리스트 각 요소에 대해 `str()`함수를 적용하여 각 요소를 문자열로 변환한 리스트를 + 나 * 구분자로 결합해 문자열로 만든다.
