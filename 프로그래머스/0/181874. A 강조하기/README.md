@@ -74,3 +74,32 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `myString.lower().replace('a', 'A')` : 두 함수를 한번에 사용하여 반환할 수 있다.
+    - 메서드 체이닝(Method chaining) : 두 개 이상의 함수를 한 줄에서 연속적으로 사용하는 것
+
+### 💻 접근법
+인사이트 : lower(), replace()
+
+### 📝 슈도코드
+```
+def solution(문자열 myString을 매개변수로 받는다):
+    answer 변수를 선언, myString문자열의 요소를 전부 소문자로 바꾼다.
+    return answer 변수 요소의 'a'를 'A'로 치환한 문자열을 반환
+```
+```python
+# 풀이 코드
+def solution(myString):
+    answer = myString.lower()
+    return answer.replace('a', 'A')
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(myString):
+    return myString.lower().replace('a', 'A')
+```
+- 원래 문자열 myString을 변경하지 않고 새로운 문자열을 반환한다.
+- 파이썬 문자열은 불변(immutable) 속성을 가지기 때문에 원본 문자열은 수정되지 않고, 각 메서드는 수정된 새로운 문자열을 반환한다.
