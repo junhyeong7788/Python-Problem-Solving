@@ -69,3 +69,20 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `	my_string.split()` : 문자열을 공백 기준으로 나눈다. 공백 문자를 기준으로 문자열을 나눠 각각의 단어를 리스트의 요소로 반환
+
+### 💻 접근법
+인사이트 : 공백 기준으로 단어를 나누는 `split()` 함수 사용
+
+### 📝 슈도코드
+```
+def solution(문자열 my_string을 매개변수로 받는다):
+    return my_string 문자열을 공백 기준으로 나눈 문자열 배열을 반환
+```
+```python
+# 풀이 코드
+def solution(my_string):
+    return my_string.split()
+```
