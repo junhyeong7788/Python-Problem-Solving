@@ -85,3 +85,40 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `accumulate()` : 주어진 이터러블의 각 요소를 차례대로 더해나가는 누적 합을 계산
+- `next()` : 제너레이터 또는 이터레이터`x for x in accumulate(numbers) if x > n`에서 다음 값을 가져오는 함수, accumulate(numbers)에서 나온 누적 값들 중 x > n조건을 만족하는 첫 번째 값을 반환 
+
+### 💻 접근법
+인사이트 : 누적 합 계산을 이용하여 특정 조건을 만족할 때 결과를 반환
+
+### 📝 슈도코드
+```
+def solution(정수 배열 numbers와 정수 n을 매개변수로 받는다):
+    answer변수 선언 = 0
+    for numbers의 배열 길이만큼의 리스트를 생성 후 그 요소를 반복:
+        answer 변수에 answer + numbers[i] 곱해주는 것으로 numbers의 원소를 앞에서부터 하나씩 더해준다
+        if answer변수가 n보다 커지면 : 지금까지 리스트에 더한 값인 answer를 반환
+
+```
+```python
+# 풀이 코드
+def solution(numbers, n):
+    answer = 0
+    for i in range(len(numbers)):
+        answer += numbers[i]
+        if answer > n: return answer
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+from itertools import accumulate
+
+def solution(numbers, n):
+    return next(x for x in accumulate(numbers) if x > n)
+```
+- `from itertools import accumulate`
+    - `accumulate()` : 주어진 이터러블의 각 요소를 차례대로 더해나가는 누적 합을 계산
+- `next()` : 제너레이터 또는 이터레이터`x for x in accumulate(numbers) if x > n`에서 다음 값을 가져오는 함수, accumulate(numbers)에서 나온 누적 값들 중 x > n조건을 만족하는 첫 번째 값을 반환 
