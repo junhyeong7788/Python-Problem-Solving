@@ -56,3 +56,17 @@
       </table>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : 간단하게 리스트 컴프리헨션으로 풀이
+
+### 📝 슈도코드
+```
+def solution(정수 x와 자연수 n을 매개변수로 받는다):
+    return 1부터 n까지의 리스트요소를(인덱스) 반복, 현재 인덱스와 x를 곱한 값을 리스트에 추가 후 반환
+```
+```python
+# 풀이 코드
+def solution(x, n):
+    return [x*i for i in range(1, n+1)]
+```
