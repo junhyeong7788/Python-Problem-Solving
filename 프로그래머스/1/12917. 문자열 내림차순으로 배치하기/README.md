@@ -44,3 +44,17 @@ s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보
       </table>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : sorted()함수로 내림차순 정렬, join()함수로 문자열 결합으로 풀이
+
+### 📝 슈도코드
+```
+def solution(문자열 s를 매개변수로 받는다):
+    return s문자열을 내림차순으로 정렬한 리스트를 ''.join함수로 문자열 결합한다.
+```
+```python
+# 풀이 코드
+def solution(s):
+    return ''.join(sorted(s, reverse=True))
+```
