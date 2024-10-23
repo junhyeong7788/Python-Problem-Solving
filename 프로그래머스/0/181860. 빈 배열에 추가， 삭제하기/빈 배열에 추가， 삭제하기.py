@@ -4,7 +4,5 @@ def solution(arr, flag):
         if flag[i]:
             X.extend([arr[i]] * (arr[i] * 2))
         else:
-            for _ in range(arr[i]):
-                if X:
-                    X.pop()
+              X = X[:-arr[i]]  
     return X
