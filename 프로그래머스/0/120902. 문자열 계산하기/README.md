@@ -70,3 +70,33 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `eval(expression, globals=None, locals=None)` : 문자열로 된 파이썬 표현식을 실행하는 함수
+    - expression : 문자열로된 파이썬 표현식
+    - globals (선택사항) : 전역 변수를 담는 사전 객체로, 어떤 전역 변수가 평가에 사용될지 정의
+    - locals (선택사항) : 변수를 담는 사전 객체로 어떤 지역 변수가 평가에 사용될지 정의
+
+### 💻 접근법
+인사이트 : eval 함수를 사용
+
+### 📝 슈도코드
+```
+def solution( 문자열 my_string을 매개변수로 받는다 ):
+    return eval(my_string)
+```
+```python
+# 풀이 코드
+def solution(my_string):
+    return eval(my_string)
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(my_string):
+    return sum(int(i) for i in my_string.replace(' - ', ' + -').split(' + '))
+```
+- 문자열 내에서 뺼셈 기호 ' - ' 를 덧셈과 음수형식으로 변환
+    - 뺄셈을 덧셈과 음수로 처리하기 위함
+- `split(' + ')` : ' + '를 기준으로 문자열을 나눈다.
