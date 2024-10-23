@@ -71,3 +71,34 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : 간단하게 리스트 슬라이싱으로 더함으로 해결
+
+### 📝 슈도코드
+```
+def solution(정수 배열 arr와 2개의 구간이 담긴 배열 intervals를 매개변수로 받는다):
+    return arr intervals[0][0]에서 [0][1]+1 까지 슬라이싱 한것과 [1][0]에서 [1][1]+1ㅓ까지 슬라이싱 한것을 더한 배열을 반환한다.
+```
+```python
+# 풀이 코드
+def solution(arr, intervals):
+    return arr[intervals[0][0]:intervals[0][1]+1] + arr[intervals[1][0]:intervals[1][1]+1]
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(arr, intervals):
+    return [arr[i:j+1] for i, j in intervals][0] + [arr[i:j+1] for i, j in intervals][1]
+```
+```python
+def solution(arr, intervals):
+    answer = []
+    for i, j in intervals:
+        answer.append(arr[i:j+1])
+    return answer[0] + answer[1]
+```
+- intervals는 이차원 배열이기에 `for i, j in intervals` 하였을 때 i는 0행 0열과 0행 1열을 반복, j는 1행 0열과 1행 1열을 반복
+    - `arr[i:j+1]` : arr의 i와 j+1값으로 슬라이싱한 값을 answer변수에 저장 (저장된 값 : `[[2, 3, 4], [5, 6]]`)
+    - answer리스트의 첫번째 요소와 두번째 요소를 더하여 하나의 리스트로 만든다.
