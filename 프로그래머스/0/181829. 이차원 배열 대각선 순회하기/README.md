@@ -105,3 +105,32 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : 중첩반복문으로 2차원 배열의 인덱스를 반복, 조건에 맞는 값을 반환
+
+### 📝 슈도코드
+```
+def solution(2차원 정수 배열 board와 정수 k를 매개변수로 받는다):
+    answer 변수를 0으로 초기화
+    for board의 길이만큼 인덱스로 반복:
+        for board[i]의 길이만큼 인덱스로 반복:
+            if i 더하기 j가 k보다 작거나 같을때:
+                answer += board[i][j]
+    return answer 값을 반환
+```
+```python
+# 풀이 코드
+def solution(board, k):
+    answer = 0
+    for i in range(len(board)):
+        for j in range(len(board[i])):
+            if i + j <= k:
+                answer += board[i][j]
+    return answer
+```
+```python
+# list comprehension
+def solution(board, k):
+    return sum(board[i][j] for i in range(len(board)) for j in range(len(board[i])) if i + j <= k)
+```
