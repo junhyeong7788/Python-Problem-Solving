@@ -75,3 +75,36 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- math 라이브러리 : `product()`는  iterable(반복 가능한 객체)의 모든 요소의 곱을 계산
+
+### 💻 접근법
+인사이트 : 가로 세로 높이에 주사위가 들어갈수있는 개수를 구해 곱하여 풀이
+
+### 📝 슈도코드
+```
+math 라이브러리에서 product함수를 불러온다.
+
+def solution(정수배열 box와 정수 n을 매개변수로 받는다):
+    answer 리스트 변수 선언
+    배열 box의 요소를 i로 반복:
+        i를 n으로 나눈 몫을 answer리스트에 저장
+    return answer배열의 모든 요소를 곱함
+```
+```python
+# 풀이 코드
+from math import prod
+
+def solution(box, n):
+    return prod((i//n) for i in box)
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(box, n):
+    x, y, z = box
+    return (x // n) * (y // n) * (z // n )
+```
+- `x, y, z = box`: 언패킹(unpacking)이라고 하며, box가 3개의 요소를 가진 리스트나 튜플일 때 가능
