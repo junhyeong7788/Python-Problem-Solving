@@ -63,3 +63,33 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : if문으로 해당 조건에 맞는 값을 배열에 추가하여 풀이
+
+### 📝 슈도코드
+```
+def solution(정수 배열 arr를 매개변수로 받는다):
+    answer이라는 변수 리스트를 생성
+    for arr의 요소를 i로 반복:
+        if i가 50보다 크거나 같고 짝수이면:
+            answer배열에 i/2한 값을 추가
+        elif i가 50보다 작고 홀수이면:
+            answer배열에 i*2한 값을 추가
+        else:
+            answer배열에 i를 추가
+    return answer 리스트를 반환
+```
+```python
+# 풀이 코드
+def solution(arr):
+    answer = []
+    for i in arr:
+        if (i >= 50) and (i % 2 == 0):
+            answer.append(i / 2)
+        elif (i < 50) and (i % 2 == 1):
+            answer.append(i * 2)
+        else:
+            answer.append(i)
+    return answer
+```
