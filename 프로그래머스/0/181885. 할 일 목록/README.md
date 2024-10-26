@@ -67,3 +67,26 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `zip()` : 여러 개의 iterable 객체를 받아, 동일한 인덱스의 요소들을 하나의 튜플로 묶어 반환
+
+### 💻 접근법
+인사이트 : 두 배열을 동일한 인덱스로 묶어 조건에 맞는 값을 반환
+
+### 📝 슈도코드
+```
+def solution(문자열 배열 todo_list와 불리언 배열 finished를 매개변수로 받는다):
+    unfinished_tasks 리스트변수 선언
+    for todo_list와 finished배열을 동일한 인덱스 순서로 묶어(zip) 튜플로 만들어 반복:
+        if is_done이 False인 경우:
+            unfinished_tasks에 task값을 추가
+    return unfinished_tasks 리스트를 반환
+```
+```python
+# 풀이 코드
+def solution(todo_list, finished):
+    unfinished_tasks = [task for task, is_done in zip(todo_list, finished) if not is_done]
+    return unfinished_tasks
+```
+- zip 함수는 여러 개의 iterable 객체를 받아, 동일한 인덱스의 요소들을 하나의 튜플로 묶어 반환
