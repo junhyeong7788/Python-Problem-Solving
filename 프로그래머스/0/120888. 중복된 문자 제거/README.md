@@ -71,3 +71,49 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `''.join` : 리스트나 딕셔너리의 키와 같은 이터러블 객체를 하나의 문자열로 합치는 함수
+- `dict.fromkeys()` : 중복을 제거한 후 입력 순서를 유지한 딕셔너리를 생성
+
+### 📝 슈도코드
+```
+def solution(문자열 my_string을 매개변수로 받는다):
+    unique_chars = my_string의 문자들을 키로 가지는 딕셔너리 생성(원래 순서 유지)
+    result = unique_chars의 모든 키를 하나의 문자열로 결합
+    return result반환
+```
+```python
+# 풀이 코드
+def solution(my_string):
+    return ''.join(dict.fromkeys(my_string))
+```
+- `dict.fromkeys(my_string)`: 전달된 키들로 구성된 딕셔너리를 생성하는 메서드
+    - my_styring 문자열의 각 문자를 키로 하는 딕셔너리를 생성하여, 중복된 문자는 하나만 남기고 제거하는 효과가 있다.
+
+```python
+# 코드 풀어쓰기
+def solution(my_string):
+    # Step 1: 중복 제거를 위해 딕셔너리 생성
+    unique_chars = dict.fromkeys(my_string)
+    
+    # Step 2: 딕셔너리의 키를 문자열로 결합하여 반환
+    result = ''.join(unique_chars)
+    
+    return result
+```
+- my_string이 hello라면 `unique_chars의 값 : {'h' : None, 'e' : None, 'l' : None, 'o' : None}`
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(my_string):
+    answer = ''
+    for i in my_string:
+        if i not in answer:
+            answer+=i
+    return answer
+```
+- answer에 i의 값이 없으면 answer 문자열에 추가.
+
+
