@@ -62,3 +62,47 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 📝 슈도코드
+```
+def solution(리스트 arr를 매개변수로 받는다):
+    answer 변수 생성 = []
+    for arr의 요소를 반복:
+        if answer리스트의 마지막 요소와 현재 요소가 같다면:
+            continue # 건너 뛴다
+        answer.append(i)
+    return answer리스트 반환
+```
+```python
+# 풀이 코드
+def solution(arr):
+    answer = []  # 결과를 저장할 리스트
+    
+    # 리스트의 모든 요소를 순회
+    for i in arr:
+        # answer 리스트의 마지막 요소와 현재 요소가 같다면 건너뛴다
+        if answer[-1:] == [i]:  
+            continue
+        # 현재 요소를 answer에 추가
+        answer.append(i)
+    
+    return answer  # 중복이 제거된 리스트 반환
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(arr):
+    answer = []
+    previous = None  # 이전 값을 추적하기 위한 변수
+    for i in arr:
+        # 이전 값과 다를 때만 answer에 추가
+        if i != previous:
+            answer.append(i)
+            previous = i  # 현재 값을 이전 값으로 업데이트
+    return answer
+```
+- **previous 변수를 사용하여 연속된 숫자를 건너뛰는 방식으로 중복을 제거하기 때문에 메모리와 시간 면에서 최적화된 코드**
+- for 루프 : 배열 arr의 모든 요소를 순회하면서 previous와 비교
+    - 현재 값 i가 previous와 다를 경우에만 answer에 추가하고, previous를 현재 값으로 업데이트
+- 시간 복잡도 : $O(n)$
