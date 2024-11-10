@@ -1,6 +1,8 @@
 def solution(arr):
     answer = []
+    previous = None  
     for i in arr:
-        if answer[-1:] == [i]: continue
-        answer.append(i)
+        if i != previous:
+            answer.append(i)
+            previous = i
     return answer
