@@ -71,3 +71,53 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 💻 접근법
+인사이트 : cnt 변수를 선언하여 차례로 카운트를 증가시키면서 풀이
+
+### 📝 슈도코드
+```
+def solution(문자열 myString을 매개변수로 받는다):
+    answer = []
+    cnt = 0
+    for myString의 길이 만큼의 리스트 요소 반복:
+        if myString[i] 가 'x'일치한다면:
+            answer리스트에 cnt를 추가
+            추가한 후 cnt를 0으로 초기화
+        else: (myString[i]가 다른 값이라면)
+            cnt 변수 1 증가
+    answer리스트에 cnt 추가 # 루프가 끝난 후 남아있는 cnt 값을 추가
+    return answer 리스트 반환
+```
+```python
+# 풀이 코드
+def solution(myString):
+    answer = []
+    cnt = 0
+    for i in range(len(myString)):
+        if myString[i] == 'x':
+            answer.append(cnt)
+            cnt = 0
+        else:
+            cnt += 1
+
+    answer.append(cnt)
+    return answer
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+def solution(myString):
+    split_strings = myString.split("x")
+    result = [len(part) for part in split_strings]
+    return result
+```
+- 'x' 를 기준으로 문자열을 나누고, 나눠진 문자열 조각들을 리스트에 저장
+- 리스트 내 각 요소의 길이를 계산하고, 그 길이 값을 새로운 리스트에 저장
+2.
+```python
+def solution(myString):
+    return [len(w) for w in myString.split('x')]
+```
+- `1.` 코드에서 `.split('x')` 을 리스트 컴프리헨션 안에 집어넣어 한줄 코딩
