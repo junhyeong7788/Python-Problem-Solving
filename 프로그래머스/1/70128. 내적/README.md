@@ -73,3 +73,39 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `zip()` : 여러 iterable 객체를 묶어서 **병렬 처리** 할 수 있도록 만드는 파이썬의 내장 함수
+    -  각 iterable의 요소를 튜플 형태로 묶은 iterator를 반환한다.
+    -  `zip()`은 lazy하게 동작하므로 한 번 사용한 iterator는 재사용이 불가능하다.
+
+### 💻 접근법
+인사이트 : 리스트 내적
+
+### 📝 슈도코드
+```
+def solution(길이가 같은 두 1차원 정수 배열 a, b를 매개변수로 받는다):
+    answer 변수 선언 = 0으로 초기화
+    for 리스트 a와 b를 튜플 형태로 묶어 x, y로 반복:
+        answer = answer + (x * y)
+    return answer
+```
+```python
+# 풀이 코드
+def solution(a, b):
+    return sum([x * y for x, y in zip(a, b)])
+```
+```python
+def solution(a, b):
+    answer = 0
+    for x, y in zip(a, b):
+        answer += x * y
+    return answer 
+```
+
+### 👍 다른 정답 코드
+1.
+```python
+solution = lambda a, b : sum(x * y for x, y in zip(a, b))
+```
+- lambda 함수로 풀이
