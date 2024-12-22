@@ -62,3 +62,21 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+---
+### 🤔 REMIND
+- `lambda 함수`
+- `sorted(iterable, key=None)` : 반복 가능한 객체를 정렬하여 새로운 리스트를 반환
+    - key : 정렬 기준을 지정한느 함수, 각 '요소에 대해 호출되어 반환된 값을 기준으로 정렬 (기본 : 오름차순)
+
+### 📝 슈도코드
+```
+def solution(매개변수 리스트 strings와 정수 n을 받음):
+    return 정렬, 새로운 리스트 생성 (strings, key값은 strings 의 각 요소(문자열)의 n번째 문자를 기준으로 정렬)
+```
+```python
+# 풀이 코드
+def solution(strings, n):
+    return sorted(strings, key=lambda x: (x[n], x))
+```
+- `x[n]` : 각 문자열의 n번째 문자를 기준으로 정렬
+- `x`: n번째 문자가 동일할 경우, 문자열 자체를 사전순으로 정렬
