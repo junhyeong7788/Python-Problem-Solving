@@ -67,3 +67,26 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+
+---
+### 🤔 REMIND
+
+### 💻 접근법
+인사이트 : 자연수 n을 x로 나눴을때 나머지가 1이 되는 수,  
+-> `“n을 1의 나머지를 두고 나누는 약수” 또는 “n보다 작은 수 중에서 n과 1의 나머지를 갖는 수"`
+
+### 📝 슈도코드
+```
+def solution(자연수 n):
+    for i in range(3부터 자연수 n까지):
+        if n을 1로 나눴을때 나머지가 1일때:
+            return i를 반환
+```
+```python
+# 풀이 코드
+def solution(n):
+    for x in range(3, n):
+        if n % x == 1:
+            return x
+```
+
